@@ -14,6 +14,9 @@ mongoose.connect(config.database);
 const server = app.listen(config.port);
 console.log('Your server is running on port ' + config.port + '.');	  
 
+// Express serves static assets
+app.use(express.static('client/build'));
+
 // Setting up the basic middleware for all Express requests
 app.use(logger('dev')); // Log requests to API using morgan
 app.use(bodyParser.urlencoded({ extended: false }));
