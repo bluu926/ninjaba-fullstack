@@ -7,7 +7,7 @@ import { AUTH_USER,
          PROTECTED_TEST } from './types';
 
 const API_URL = 'https://ben-test-ninja.herokuapp.com/api';
-const CLIENT_ROOT_URL = 'https://ben-test-ninja.herokuapp.com/';
+const CLIENT_ROOT_URL = 'https://ben-test-ninja.herokuapp.com';
 
 export function errorHandler(dispatch, error, type) {  
   let errorMessage = '';
