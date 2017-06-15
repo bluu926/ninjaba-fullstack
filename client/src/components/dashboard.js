@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
@@ -14,23 +13,12 @@ var products = [{
 	price: 80
 }];
 
-const API_URL = 'https://ben-test-ninja.herokuapp.com/api';
-const PLAYERS_URL = API_URL + '/auth/players';
-
 class Dashboard extends Component {
 
 	constructor(props) {
 		super(props);
-		this.props.protectedTest();
-		this.state = { data: [] };
-		this.loadCommentsFromServer = this.loadCommentsFromServer.bind(this);
-	}
-
-	loadCommentsFromServer() {
-		axios.get(PLAYERS_URL)
-			.then(res => {
-				this.setState({ data: res.data });
-			})
+		//this.props.protectedTest();
+		this.props.loadPlayersFromServer();
 	}
 
 	renderContent() {
@@ -52,7 +40,7 @@ class Dashboard extends Component {
 
 	render() {
 		return (
-			<BootstrapTable data={ this.state.data } striped hover condensed>
+			<BootstrapTable data={ this.props.content } striped hover condensed>
 				<TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
 				<TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>

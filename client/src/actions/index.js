@@ -87,3 +87,20 @@ export function protectedTest() {
     });
   }
 }
+
+export function loadPlayersFromServer() {  
+  return function(dispatch) {
+    axios.get(`${API_URL}/auth/players`, {
+      headers: { 'Authorization': cookie.load('token') }
+    })
+    .then(response => {
+      dispatch({
+        type: PROTECTED_TEST,
+        payload: response.data.content
+      });
+    })
+    .catch((error) => {
+      errorHandler(dispatch, error.response, AUTH_ERROR)
+    });
+  }
+}
