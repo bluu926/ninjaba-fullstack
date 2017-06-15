@@ -32,7 +32,7 @@ module.exports = function(app) {
 	// Login route
 	authRoutes.post('/login', requireLogin, AuthenticationController.login);
 	
-	apiRoutes.get('/players', requireAuth, (req, res) => {
+	authRoutes.get('/players', requireAuth, (req, res) => {
 		Player.find(function(err, players) {
 			if (err)
 				res.send(err);
