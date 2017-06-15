@@ -1,6 +1,6 @@
 const AuthenticationController = require('./controllers/authentication'),
       express = require('express'),
-      Player = require('./model/player'),
+      Player = require('./models/player'),
 	  passportService = require('./config/passport'),
 	  passport = require('passport');
 			
