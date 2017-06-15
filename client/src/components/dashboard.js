@@ -40,7 +40,7 @@ class Dashboard extends Component {
 
 	render() {
 		return (
-			<BootstrapTable data={ this.props } striped hover condensed>
+			<BootstrapTable data={ this.props.data } striped hover condensed>
 				<TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
 				<TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
