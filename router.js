@@ -1,5 +1,6 @@
 const AuthenticationController = require('./controllers/authentication'),
       express = require('express'),
+      Player = require('./model/player'),
 	  passportService = require('./config/passport'),
 	  passport = require('passport');
 			
@@ -31,6 +32,14 @@ module.exports = function(app) {
 	// Login route
 	authRoutes.post('/login', requireLogin, AuthenticationController.login);
 	
+	apiRoutes.get('/players', requireAuth, (req, res) => {
+		Player.find(function(err, players) {
+			if (err)
+				res.send(err);
+			res.json(players)
+		});
+	});
+
 	// Test protected route
 	apiRoutes.get('/protected', requireAuth, (req, res) => {
 	    res.send({ content: 'The protected test route is functional!' });
