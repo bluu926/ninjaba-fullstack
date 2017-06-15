@@ -96,7 +96,7 @@ export function loadPlayersFromServer() {
     .then(response => {
       dispatch({
         type: PROTECTED_TEST,
-        payload: response.data
+        payload: response.data.content
       });
     })
     .catch((error) => {
