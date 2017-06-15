@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 //==============================
 // Player Scehma
 //==============================
-const PlayersSchema = new Schema({
+const PlayerSchema = new Schema({
   	name: {
 	    type: String,
 		required: true
@@ -31,4 +31,4 @@ const PlayersSchema = new Schema({
 //}
 );
 
-module.exports = mongoose.model('Player', PlayersSchema);
+module.exports = mongoose.model('Player', PlayerSchema, 'players');
