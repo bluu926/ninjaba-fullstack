@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+
+var products = [{
+	id: 1,
+	name: "Product1",
+	price: 120
+}, {
+	id: 2,
+	name: "Product2",
+	price: 80
+}];
 
 class Dashboard extends Component {
 
@@ -19,13 +30,24 @@ class Dashboard extends Component {
 		}
 	}
 
+//	render() {
+//		return (
+//			<div>
+//				{this.renderContent()}
+//			</div>
+//		);
+//	}
+
 	render() {
 		return (
-			<div>
-				{this.renderContent()}
-			</div>
+			<BootstrapTable data={ products } striped hover condensed>
+				<TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
+				<TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
+				<TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
+			</BootstrapTable>
 		);
 	}
+
 }
 
 function mapStateToProps(state) {
