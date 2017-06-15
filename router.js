@@ -36,7 +36,7 @@ module.exports = function(app) {
 		Player.find(function(err, players) {
 			if (err)
 				res.send(err);
-			res.json(players)
+			res.send({ data: players });
 		});
 	});
 
