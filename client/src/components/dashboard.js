@@ -24,6 +24,8 @@ class Dashboard extends Component {
 		//this.props.protectedTest();
 		this.props.loadPlayersFromServer();
 
+		this.jsonObject = JSON.parse(this.props.content);
+
 		this.options = {
 			defaultSortName: 'Name',  // default sort column name
 			defaultSortOrder: 'asc',  // default sort order
@@ -37,7 +39,7 @@ class Dashboard extends Component {
 			}, {
 				text: '100', value: 100
 			}, {
-				text: 'All', value: this.props.data.length
+				text: 'All', value: Object.keys(this.jsonObject).length
 			} ], // you can change the dropdown list for size per page
 			sizePerPage: 1,  // which size per page you want to locate as default
 			pageStartIndex: 1, // where to start counting the pages
