@@ -41,6 +41,7 @@ class Dashboard extends Component {
 		return (
 			<BootstrapTable data={ this.props.content } striped hover condensed>
 				<TableHeaderColumn dataField='Name' isKey>Player Name</TableHeaderColumn>
+				<TableHeaderColumn dataField='Team'>Teams Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='Team' filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 					filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
