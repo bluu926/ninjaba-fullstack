@@ -3,15 +3,14 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
-var products = [{
-	id: 1,
-	name: "Product1",
-	price: 120
-}, {
-	id: 2,
-	name: "Product2",
-	price: 80
-}];
+const teams = {
+  0: 'Warriors',
+  1: 'OKC'
+};
+
+function enumFormatter(cell, row, enumObject) {
+	return enumObject[cell];
+}
 
 class Dashboard extends Component {
 
@@ -42,6 +41,9 @@ class Dashboard extends Component {
 		return (
 			<BootstrapTable data={ this.props.content } striped hover condensed>
 				<TableHeaderColumn dataField='Name' isKey>Player Name</TableHeaderColumn>
+				<TableHeaderColumn dataField='Team' isKey>Team</TableHeaderColumn>
+				<TableHeaderColumn dataField='Team' filterFormatted dataFormat={ enumFormatter } formatExtraData={ teams }
+         			 filter={ { type: 'SelectFilter', options: teams } }>Team</TableHeaderColumn>
 				<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
 				<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
 				<TableHeaderColumn dataField='Owner'>Owner</TableHeaderColumn>
