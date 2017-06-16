@@ -8,6 +8,11 @@ const allTeams = {
   'OKC': 'OKC'
 };
 
+const selectRowProp = {
+  mode: 'radio',
+  clickToSelect: true
+};
+
 function enumFormatter(cell, row, enumObject) {
 	return enumObject[cell];
 }
@@ -44,7 +49,7 @@ class Dashboard extends Component {
 
 	render() {
 		return (
-			<BootstrapTable data={ this.props.content } striped hover condensed>
+			<BootstrapTable data={ this.props.content } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
 				<TableHeaderColumn dataField='Name' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } } isKey>Player Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='Team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 					filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
