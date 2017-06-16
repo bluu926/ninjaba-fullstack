@@ -9,6 +9,10 @@ const PlayerSchema = new Schema({
 	    type: String,
 		required: true
 	},
+	team: {
+	    type: String,
+		required: true
+	},
 	g: {
 	  	type: String,
 		required: true
