@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
-const teams = {
+const allTeams = {
   0: 'Warriors',
   1: 'OKC'
 };
@@ -41,11 +41,11 @@ class Dashboard extends Component {
 		return (
 			<BootstrapTable data={ this.props.content } striped hover condensed>
 				<TableHeaderColumn dataField='Name' isKey>Player Name</TableHeaderColumn>
-				<TableHeaderColumn dataField='Team' filterFormatted dataFormat={ enumFormatter } formatExtraData={ teams }
-					filter={ { type: 'SelectFilter', options: teams } }>Team Name</TableHeaderColumn>
+				<TableHeaderColumn dataField='Team' filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
+					filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
 				<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
-				<TableHeaderColumn dataField='Team'>Owner</TableHeaderColumn>
+				<TableHeaderColumn dataField='Owner'>Owner</TableHeaderColumn>
 			</BootstrapTable>
 		);
 	}
