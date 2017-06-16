@@ -40,8 +40,8 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<BootstrapTable data={ this.props.content } striped hover condensed>
-				<TableHeaderColumn dataField='Name' filter={ { type: 'TextFilter', delay: 500 } } isKey>Player Name</TableHeaderColumn>
-				<TableHeaderColumn dataField='Team' filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
+				<TableHeaderColumn dataField='Name' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } } isKey>Player Name</TableHeaderColumn>
+				<TableHeaderColumn dataField='Team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 					filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
 				<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
