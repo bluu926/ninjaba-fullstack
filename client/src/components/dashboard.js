@@ -45,7 +45,7 @@ class Dashboard extends Component {
 					filter={ { type: 'SelectFilter', options: teams } }>Team Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
 				<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
-				<TableHeaderColumn dataField='Owner'>Owner</TableHeaderColumn>
+				<TableHeaderColumn dataField='Team'>Owner</TableHeaderColumn>
 			</BootstrapTable>
 		);
 	}
