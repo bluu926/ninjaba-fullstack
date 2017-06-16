@@ -4,8 +4,8 @@ import * as actions from '../actions';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 const allTeams = {
-  0: 'Warriors',
-  1: 'OKC'
+  'Warriors': 'Warriors',
+  'OKC': 'OKC'
 };
 
 function enumFormatter(cell, row, enumObject) {
@@ -41,7 +41,6 @@ class Dashboard extends Component {
 		return (
 			<BootstrapTable data={ this.props.content } striped hover condensed>
 				<TableHeaderColumn dataField='Name' isKey>Player Name</TableHeaderColumn>
-				<TableHeaderColumn dataField='Team'>Teams Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='Team' filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 					filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
