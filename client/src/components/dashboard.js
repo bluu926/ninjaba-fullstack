@@ -18,6 +18,11 @@ class Dashboard extends Component {
 		super(props);
 		//this.props.protectedTest();
 		this.props.loadPlayersFromServer();
+
+		this.options = {
+			defaultSortName: 'Name',  // default sort column name
+			defaultSortOrder: 'asc'  // default sort order
+		};
 	}
 
 	renderContent() {
