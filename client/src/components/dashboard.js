@@ -37,7 +37,7 @@ class Dashboard extends Component {
 			}, {
 				text: '100', value: 100
 			}, {
-				text: 'All', value: this.props.content.length
+				text: 'All', value: this.props.data.length
 			} ], // you can change the dropdown list for size per page
 			sizePerPage: 1,  // which size per page you want to locate as default
 			pageStartIndex: 1, // where to start counting the pages
