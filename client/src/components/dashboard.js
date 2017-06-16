@@ -26,7 +26,28 @@ class Dashboard extends Component {
 
 		this.options = {
 			defaultSortName: 'Name',  // default sort column name
-			defaultSortOrder: 'asc'  // default sort order
+			defaultSortOrder: 'asc',  // default sort order
+
+			sizePerPageList: [ {
+				text: '1', value: 1
+			}, {
+				text: '10', value: 10
+			}, {
+				text: '25', value: 25
+			}, {
+				text: '100', value: 100
+			}, {
+				text: 'All', value: this.props.content.length
+			} ], // you can change the dropdown list for size per page
+			sizePerPage: 1,  // which size per page you want to locate as default
+			pageStartIndex: 0, // where to start counting the pages
+			paginationSize: 3,  // the pagination bar size.
+			prePage: 'Prev', // Previous page button text
+			nextPage: 'Next', // Next page button text
+			firstPage: 'First', // First page button text
+			lastPage: 'Last', // Last page button text
+			paginationShowsTotal: this.renderShowsTotal,  // Accept bool or function
+			paginationPosition: 'top'  // default is bottom, top and both is all available
 		};
 	}
 
@@ -49,7 +70,7 @@ class Dashboard extends Component {
 
 	render() {
 		return (
-			<BootstrapTable data={ this.props.content } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
+			<BootstrapTable data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
 				<TableHeaderColumn dataField='Name' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } } isKey>Player Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='Team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 					filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
