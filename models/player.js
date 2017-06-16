@@ -20,6 +20,10 @@ const PlayerSchema = new Schema({
 	fga: {
 	  	type: String,
 		required: true
+	},
+	owner: {
+		type: String,
+		required: false
 	}
 //	,
 //	resetPasswordToken: { type: String },

@@ -44,6 +44,7 @@ class Dashboard extends Component {
 				<TableHeaderColumn dataField='Name' isKey>Player Name</TableHeaderColumn>
 				<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
 				<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
+				<TableHeaderColumn dataField='Owner'>Owner</TableHeaderColumn>
 			</BootstrapTable>
 		);
 	}
