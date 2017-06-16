@@ -41,9 +41,9 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<BootstrapTable data={ this.props.content } striped hover condensed>
-				<TableHeaderColumn dataField='name' isKey>Player Name</TableHeaderColumn>
-				<TableHeaderColumn dataField='g'>Games</TableHeaderColumn>
-				<TableHeaderColumn dataField='fg'>Field Goals</TableHeaderColumn>
+				<TableHeaderColumn dataField='Name'>Player Name</TableHeaderColumn>
+				<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
+				<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
 			</BootstrapTable>
 		);
 	}
