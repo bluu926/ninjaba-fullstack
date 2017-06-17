@@ -70,14 +70,18 @@ class Dashboard extends Component {
 
 	render() {
 		return (
-			<BootstrapTable data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
-				<TableHeaderColumn dataField='Name' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } } isKey>Player Name</TableHeaderColumn>
-				<TableHeaderColumn dataField='Team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
-					filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
-				<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
-				<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
-				<TableHeaderColumn dataField='Owner'>Owner</TableHeaderColumn>
-			</BootstrapTable>
+			<div>
+				<BootstrapTable data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
+					<TableHeaderColumn dataField='Name' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } } isKey>Player Name</TableHeaderColumn>
+					<TableHeaderColumn dataField='Team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
+						filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
+					<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
+					<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
+					<TableHeaderColumn dataField='Owner'>Owner</TableHeaderColumn>
+				</BootstrapTable>
+				<button className='btn btn-primary'>Add Player</button>
+				<button className='btn btn-danger'>Drop Player</button>
+			</div>
 		);
 	}
 
