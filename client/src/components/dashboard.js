@@ -55,11 +55,11 @@ class Dashboard extends Component {
 	}
 
 	handleSaveBtnClick = () => {
-		alert(this.props.user);
+		alert(Object.values(this.props.user));
 	}
 
 	handleDropBtnClick = () => {
-		alert('Drop');
+		alert(this.props.user[2]);
 	}
 
 	renderContent() {
