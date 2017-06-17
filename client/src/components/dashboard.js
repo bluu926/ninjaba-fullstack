@@ -51,6 +51,14 @@ class Dashboard extends Component {
 		};
 	}
 
+	handleSaveBtnClick = () => {
+		alert('Save');
+	}
+
+	handleDropBtnClick = () => {
+		alert('Drop');
+	}
+
 	renderContent() {
 		console.log('test' + this.props.content);
 		if(this.props.content) {
@@ -79,8 +87,8 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
 					<TableHeaderColumn dataField='Owner'>Owner</TableHeaderColumn>
 				</BootstrapTable>
-				<button className='btn btn-primary'>Add Player</button>
-				<button className='btn btn-danger'>Drop Player</button>
+				<button onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
+				<button onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
 			</div>
 		);
 	}
