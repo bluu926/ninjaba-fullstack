@@ -55,7 +55,7 @@ class Dashboard extends Component {
 	}
 
 	handleSaveBtnClick = () => {
-		alert(JSON.parse(this.props.user));
+		alert(this.props.user);
 	}
 
 	handleDropBtnClick = () => {
