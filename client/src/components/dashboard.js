@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import cookie from 'react-cookie';
+
+const token = cookie.load('token');
 
 const allTeams = {
   'Warriors': 'Warriors',
@@ -52,7 +55,7 @@ class Dashboard extends Component {
 	}
 
 	handleSaveBtnClick = () => {
-		alert(this.props.userInfo.firstName);
+		alert(token);
 	}
 
 	handleDropBtnClick = () => {
