@@ -55,7 +55,7 @@ class Dashboard extends Component {
 	}
 
 	handleSaveBtnClick = () => {
-		alert(actions.payload);
+		alert(this.props.user);
 	}
 
 	handleDropBtnClick = () => {
@@ -99,7 +99,10 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps(state) {
-	return { content: state.auth.content };
+	return { 
+		content: state.auth.content,
+		user: state.auth.user
+	};
 }
 
 export default connect(mapStateToProps, actions)(Dashboard);
