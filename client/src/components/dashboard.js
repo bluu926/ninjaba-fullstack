@@ -55,7 +55,7 @@ class Dashboard extends Component {
 	}
 
 	handleSaveBtnClick = () => {
-		alert(token);
+		alert(actions.payload);
 	}
 
 	handleDropBtnClick = () => {
