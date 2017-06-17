@@ -39,8 +39,6 @@ export function loginUser({ email, password }) {
     axios.post(`${API_URL}/auth/login`, { email, password })
     .then(response => {
       cookie.save('token', response.data.token, { path: '/' });
-      console.log('******' + response.data.token);
-      console.log('******' + response.data.user);
       dispatch({ 
         type: AUTH_USER,
         payload: response.data.user
