@@ -16,29 +16,28 @@ const renderField = field => (
 );
 
 function validate(formProps) {  
-  const errors = {};
+  const error = {};
   if (!formProps.firstName) {
-    alert('here');
-    errors.firstName = 'Please enter a first name';
+    error.firstName = 'Please enter a first name';
   }
 
   if (!formProps.lastName) {
-    errors.lastName = 'Please enter a last name';
+    error.lastName = 'Please enter a last name';
   }
 
   if (!formProps.email) {
-    errors.email = 'Please enter an email';
+    error.email = 'Please enter an email';
   }
 
   if (!formProps.username) {
-    errors.username = 'Please enter a username';
+    error.username = 'Please enter a username';
   }  
 
   if (!formProps.password) {
-    errors.password = 'Please enter a password';
+    error.password = 'Please enter a password';
   }
 
-  return errors;
+  return error;
 }
 
 class Register extends Component {  
