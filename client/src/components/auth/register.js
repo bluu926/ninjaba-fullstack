@@ -30,6 +30,10 @@ function validate(formProps) {
     errors.email = 'Please enter an email';
   }
 
+  if (!formProps.username) {
+    errors.username = 'Please enter a username';
+  }  
+
   if (!formProps.password) {
     errors.password = 'Please enter a password';
   }
@@ -74,6 +78,12 @@ class Register extends Component {
             <Field name="email" className="form-control" component={renderField} type="text" />
           </div>
         </div>
+        <div className="row">
+          <div className="col-md-12">
+            <label>username</label>
+            <Field name="username" className="form-control" component={renderField} type="text" />
+          </div>
+        </div>        
         <div className="row">
           <div className="col-md-12">
             <label>Password</label>

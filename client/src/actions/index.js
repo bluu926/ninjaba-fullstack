@@ -34,9 +34,9 @@ export function errorHandler(dispatch, error, type) {
   }
 }
 
-export function loginUser({ email, password }) {  
+export function loginUser({ username, password }) {  
   return function(dispatch) {
-    axios.post(`${API_URL}/auth/login`, { email, password })
+    axios.post(`${API_URL}/auth/login`, { username, password })
     .then(response => {
       cookie.save('token', response.data.token, { path: '/' });
       dispatch({ 
@@ -51,9 +51,9 @@ export function loginUser({ email, password }) {
     }
   }
 
-export function registerUser({ email, firstName, lastName, password }) {  
+export function registerUser({ email, username, firstName, lastName, password }) {  
   return function(dispatch) {
-    axios.post(`${API_URL}/auth/register`, { email, firstName, lastName, password })
+    axios.post(`${API_URL}/auth/register`, { email, username, firstName, lastName, password })
     .then(response => {
       cookie.save('token', response.data.token, { path: '/' });
       dispatch({ type: AUTH_USER });
