@@ -85,6 +85,16 @@ class Dashboard extends Component {
 
 	handleDropBtnClick = () => {
 		alert(this.props.user['firstName']);
+
+		const selected = this.refs.table.state.selectedRowKeys;
+		var rowStr = "";
+
+		for(var prop in selected){
+		rowStr+=prop+": '"+selected[prop]+"' ";
+	}
+	alert("is selected: " + selected + ", " + rowStr);
+
+
 	}
 
 	renderContent() {
