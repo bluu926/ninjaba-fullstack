@@ -80,14 +80,14 @@ class Register extends Component {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <label>username</label>
+            <label>Username</label>
             <Field name="username" className="form-control" component={renderField} type="text" />
           </div>
         </div>        
         <div className="row">
           <div className="col-md-12">
             <label>Password</label>
-            <Field name="password" className="form-control" component={renderField} type="password" />
+            <Field name="password" className="form-control" type="password" component={renderField} />
           </div>
         </div>
         <button type="submit" className="btn btn-primary">Register</button>
