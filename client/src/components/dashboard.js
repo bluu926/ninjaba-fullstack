@@ -35,8 +35,8 @@ function onRowSelect(row, isSelected){
 
 function actionButton(row) {
 	$('#buttonPlaceHolder').replaceWith(
-		"<div class='buttonPlaceHolder'>" +
-		"<button onClick='add()'className='btn btn-primary'>Add Player</button>" +
+		"<div id='buttonPlaceHolder'>" +
+		"<button onClick={ this.handleSaveBtnClick } class='btn btn-primary'>Add Player</button>" +
 		"</div>"
 	);
 }
