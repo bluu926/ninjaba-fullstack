@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import cookie from 'react-cookie';
+import $ from 'jquery';
 
 const token = cookie.load('token');
 
@@ -13,11 +14,35 @@ const allTeams = {
 
 const selectRowProp = {
   mode: 'radio',
+  onSelect: onRowSelect,
   clickToSelect: true
 };
 
 function enumFormatter(cell, row, enumObject) {
 	return enumObject[cell];
+}
+
+function onRowSelect(row, isSelected){
+	var rowStr = "";
+
+	for(var prop in row){
+		rowStr+=prop+": '"+row[prop]+"' ";
+	}
+	alert("is selected: " + isSelected + ", " + rowStr);
+
+	actionButton(row);
+}
+
+function actionButton(row) {
+	$('buttonPlaceHolder').replaceWIth(
+		"<div className='buttonPlaceHolder'>" +
+		"<button onClick='add()'className='btn btn-primary'>Add Player</button>" +
+		"</div>"
+	);
+}
+
+function add() {
+	alert('add');
 }
 
 class Dashboard extends Component {
@@ -92,6 +117,9 @@ class Dashboard extends Component {
 				</BootstrapTable>
 				<button onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
 				<button onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
+				<div>
+					<div class="buttonPlaceHolder"></div>
+				</div>
 			</div>
 		);
 	}
