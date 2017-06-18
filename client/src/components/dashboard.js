@@ -106,7 +106,7 @@ class Dashboard extends Component {
 		return (
 			<div>
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
-					<TableHeaderColumn dataField="id" isKey hidden>Id</TableHeaderColumn>
+					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
 					<TableHeaderColumn dataField='Name' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player Name</TableHeaderColumn>
 					<TableHeaderColumn dataField='Team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
