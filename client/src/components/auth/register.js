@@ -18,7 +18,7 @@ const renderField = field => (
 
 function validate(formProps) {  
   const errors = {};
-
+alert('here');
   if (!formProps.firstName) {
     errors.firstName = 'Please enter a first name';
   }
