@@ -15,6 +15,13 @@ const renderField = field => (
     </div>
 );
 
+const passwordField = field => (  
+    <div>
+      <input className="form-control" {...field.password}/>
+      {field.touched && field.error && <div className="error">{field.error}</div>}
+    </div>
+);
+
 function validate(formProps) {  
   const errors = {};
 
@@ -87,7 +94,7 @@ class Register extends Component {
         <div className="row">
           <div className="col-md-12">
             <label>Password</label>
-            <Field name="password" className="form-control" type="password" component={renderField} />
+            <Field name="password" className="form-control" component={passwordField} type="password" />
           </div>
         </div>
         <button type="submit" className="btn btn-primary">Register</button>
