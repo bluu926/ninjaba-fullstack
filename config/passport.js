@@ -6,14 +6,14 @@ const passport = require('passport'),
   ExtractJwt = require('passport-jwt').ExtractJwt,
   LocalStrategy = require('passport-local');
 
-// Setting username field to email rather than username
+// Setting username field to username rather than username
 const localOptions = {
-  usernameField: 'email'
+  usernameField: 'username'
 };
 
 // Setting up local login strategy
-const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
-  User.findOne({ email }, (err, user) => {
+const localLogin = new LocalStrategy(localOptions, (username, password, done) => {
+  User.findOne({ username }, (err, user) => {
     if (err) { return done(err); }
     if (!user) { return done(null, false, { error: 'Your login details could not be verified. Please try again.' }); }
 
