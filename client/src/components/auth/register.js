@@ -15,11 +15,10 @@ const renderField = field => (
     </div>
 );
 
-
 function validate(formProps) {  
   const errors = {};
-alert('here');
   if (!formProps.firstName) {
+    alert('here');
     errors.firstName = 'Please enter a first name';
   }
 
