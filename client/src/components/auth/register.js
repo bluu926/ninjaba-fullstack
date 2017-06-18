@@ -16,28 +16,29 @@ const renderField = field => (
 );
 
 function validate(formProps) {  
-  const error = {};
+  const errors = {};
+
+  if (!formProps.username) {
+    errors.username = 'Please enter a username';
+  }
+
   if (!formProps.firstName) {
-    error.firstName = 'Please enter a first name';
+    errors.firstName = 'Please enter a first name';
   }
 
   if (!formProps.lastName) {
-    error.lastName = 'Please enter a last name';
+    errors.lastName = 'Please enter a last name';
   }
 
   if (!formProps.email) {
-    error.email = 'Please enter an email';
+    errors.email = 'Please enter an email';
   }
-
-  if (!formProps.username) {
-    error.username = 'Please enter a username';
-  }  
 
   if (!formProps.password) {
-    error.password = 'Please enter a password';
+    errors.password = 'Please enter a password';
   }
 
-  return error;
+  return errors;
 }
 
 class Register extends Component {  
@@ -62,6 +63,12 @@ class Register extends Component {
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
       {this.renderAlert()}
       <div className="row">
+        <div className="col-md-12">
+          <label>Username</label>
+          <Field name="username" className="form-control" component={renderField} type="text" />
+        </div>
+      </div>
+      <div className="row">
         <div className="col-md-6">
           <label>First Name</label>
           <Field name="firstName" className="form-control" component={renderField} type="text" />
@@ -77,12 +84,6 @@ class Register extends Component {
             <Field name="email" className="form-control" component={renderField} type="text" />
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12">
-            <label>Username</label>
-            <Field name="username" className="form-control" component={renderField} type="text" />
-          </div>
-        </div>        
         <div className="row">
           <div className="col-md-12">
             <label>Password</label>
