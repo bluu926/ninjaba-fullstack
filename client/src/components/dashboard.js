@@ -34,8 +34,8 @@ function onRowSelect(row, isSelected){
 }
 
 function actionButton(row) {
-	$('buttonPlaceHolder').replaceWith(
-		"<div className='buttonPlaceHolder'>" +
+	$('#buttonPlaceHolder').replaceWith(
+		"<div class='buttonPlaceHolder'>" +
 		"<button onClick='add()'className='btn btn-primary'>Add Player</button>" +
 		"</div>"
 	);
@@ -118,7 +118,7 @@ class Dashboard extends Component {
 				<button onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
 				<button onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
 				<div>
-					<div class="buttonPlaceHolder"></div>
+					<div id='buttonPlaceHolder'></div>
 				</div>
 			</div>
 		);
