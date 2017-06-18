@@ -29,20 +29,6 @@ function onRowSelect(row, isSelected){
 		rowStr+=prop+": '"+row[prop]+"' ";
 	}
 	alert("is selected: " + isSelected + ", " + rowStr);
-
-	actionButton(row);
-}
-
-function actionButton(row) {
-	$('#buttonPlaceHolder').replaceWith(
-		"<div id='buttonPlaceHolder'>" +
-		"<button onClick='add();' class='btn btn-primary'>Add Player</button>" +
-		"</div>"
-	);
-}
-
-function add() {
-	alert('add');
 }
 
 class Dashboard extends Component {
@@ -89,11 +75,13 @@ class Dashboard extends Component {
 		const selected = this.refs.table.state.selectedRowKeys;
 		var rowStr = "";
 
-		for(var prop in selected){
-		rowStr+=prop+": '"+selected[prop]+"' ";
-	}
-	alert("is selected: " + selected + ", " + rowStr);
+		alert(selected);
 
+		for(var prop in selected){
+			rowStr+=prop+": '"+selected[prop]+"' ";
+		}
+		
+		//alert("is selected: " + selected + ", " + rowStr);
 
 	}
 
@@ -127,9 +115,6 @@ class Dashboard extends Component {
 				</BootstrapTable>
 				<button onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
 				<button onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
-				<div>
-					<div id='buttonPlaceHolder'></div>
-				</div>
 			</div>
 		);
 	}
