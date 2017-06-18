@@ -8,12 +8,14 @@ const form = reduxForm({
   validate
 });
 
-const renderField = field => (  
+const renderField = ({ input, label, type, meta: { touched, error } }) => (
+  <div>
     <div>
-      <input className="form-control" {...field.input}/>
-      {field.touched && field.error && <div className="error">{field.error}</div>}
+      <input {...input} placeholder={label} type={type}/>
+      {touched && error && <span>{error}</span>}
     </div>
-);
+  </div>
+)
 
 function validate(formProps) {  
   const errors = {};
