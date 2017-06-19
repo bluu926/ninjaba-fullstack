@@ -37,6 +37,7 @@ class Dashboard extends Component {
 		super(props);
 		//this.props.protectedTest();
 		this.props.loadPlayersFromServer();
+		this.userInfo = localStorage.getItem('user');
 
 		this.options = {
 			defaultSortName: 'Name',  // default sort column name
@@ -66,15 +67,17 @@ class Dashboard extends Component {
 	}
 
 	handleSaveBtnClick = () => {
-		alert(Object.keys(this.props.user));
+		alert(Object.keys(this.props.userInfo));
 
 		const playerId = this.refs.table.state.selectedRowKeys;
-		const username = this.props.user['username'];
+		alert(playerId);
+		const username = this.props.userInfo['username'];
+		alert(username);
 		this.props.addPlayer(playerId, username);
 	}
 
 	handleDropBtnClick = () => {
-		alert(this.props.user['username']);
+		alert(this.props.userInfo['username']);
 
 		const selected = this.refs.table.state.selectedRowKeys;
 		var rowStr = "";
@@ -120,9 +123,10 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps(state) {
+	localStorage.setItem('user', state.auth.user);
 	return { 
-		content: state.auth.content,
-		user: state.auth.user
+		content: state.auth.content
+		//user: state.auth.user
 	};
 }
 
