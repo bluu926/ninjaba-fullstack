@@ -115,9 +115,11 @@ export function loadPlayersFromServer() {
 
 export function addPlayer(playerId, username) {
   return function(dispatch) {
-    axios.post(`${API_URL}/auth/add/${playerId}/${username}`, {
-      headers: { 'Authorization': cookie.load('token') }
-    })
+    axios.defaults.headers.common['Authorization'] = cookie.load('token');
+//    axios.post(`${API_URL}/auth/add/${playerId}/${username}`, {
+//      headers: { 'Authorization': cookie.load('token') }
+//    })
+    axios.post(`${API_URL}/auth/add/${playerId}/${username}`)
     .then(response => {
       dispatch({
         type: ADD_PLAYER
