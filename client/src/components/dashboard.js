@@ -124,9 +124,9 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
 	if (state.auth.user) {
-		localStorage.setItem('user', state.auth.user);	
+		localStorage.setItem('user', state.auth.user['usename']);	
 	}
-	alert(Object.values(localStorage.getItem('user')));
+	alert(localStorage.getItem('user'));
 	return { 
 		content: state.auth.content
 		//user: state.auth.user
