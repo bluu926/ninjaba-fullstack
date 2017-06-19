@@ -91,6 +91,16 @@ class Dashboard extends Component {
 		}
 	}
 
+	renderAlert() {
+	  if(this.props.errorMessage) {
+	      return (
+	        <div>
+	          <span><strong>Error!</strong> {this.props.errorMessage}</span>
+	        </div>
+      );
+    }
+	}
+
 //	render() {
 //		return (
 //			<div>
@@ -102,6 +112,7 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<div>
+				{this.renderAlert()}
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
 					<TableHeaderColumn dataField='Name' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player Name</TableHeaderColumn>
@@ -125,7 +136,8 @@ function mapStateToProps(state) {
 	}
 
 	return { 
-		content: state.auth.content
+		content: state.auth.content,
+		errorMessage: state.auth.error
 		//user: state.auth.user
 	};
 }
