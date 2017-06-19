@@ -121,11 +121,13 @@ export function addPlayer(playerId, username) {
 //    })
     axios.post(`${API_URL}/auth/add/${playerId}/${username}`)
     .then(response => {
+      alert('here');
       dispatch({
         type: ADD_PLAYER
       });
     })
     .catch((error) => {
+      alert('here2');
       errorHandler(dispatch, error.response, ERROR)
     });
   }

@@ -67,12 +67,9 @@ class Dashboard extends Component {
 	}
 
 	handleSaveBtnClick = () => {
-		alert(Object.keys(this.userInfo));
-
 		const playerId = this.refs.table.state.selectedRowKeys;
-		alert(playerId);
 		const username = this.userInfo['username'];
-		alert(username);
+
 		this.props.addPlayer(playerId, username);
 	}
 
@@ -127,7 +124,6 @@ function mapStateToProps(state) {
 		localStorage.setItem('user', JSON.stringify(state.auth.user));	
 	}
 
-	alert(localStorage.getItem('user'));
 	return { 
 		content: state.auth.content
 		//user: state.auth.user
