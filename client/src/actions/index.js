@@ -14,9 +14,8 @@ const CLIENT_ROOT_URL = 'https://ben-test-ninja.herokuapp.com';
 export function errorHandler(dispatch, error, type) {  
   let errorMessage = '';
 
-  if(error.response.data.error) {
-    errorMessage = error.response.data.error;
-  } else if(error.data.error) {
+  if(error.data.error) {
+    alert(error.data.error);
     errorMessage = error.data.error;
   } else if(error.data) {
     errorMessage = error.data;
@@ -129,8 +128,6 @@ export function addPlayer(playerId, username) {
       });
     })
     .catch((error) => {
-      alert(Object.keys(error.response.data.error));
-      alert(Object.values(error.response.data));
       errorHandler(dispatch, error.response, ERROR)
     });
   }
