@@ -30,7 +30,7 @@ module.exports = function(app) {
 	authRoutes.post('/register', AuthenticationController.register);
 	
 	// Login route
-	authRoutes.post('/login', requireAuth, AuthenticationController.login);
+	authRoutes.post('/login', requireLogin, AuthenticationController.login);
 
 	authRoutes.post('/add/:playerId/:username', requireAuth, AuthenticationController.addPlayer);
 	
