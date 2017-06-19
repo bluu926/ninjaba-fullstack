@@ -127,7 +127,7 @@ export function addPlayer(playerId, username) {
       });
     })
     .catch((error) => {
-      alert(error.response);
+      alert(error);
       errorHandler(dispatch, error.response, ERROR)
     });
   }
