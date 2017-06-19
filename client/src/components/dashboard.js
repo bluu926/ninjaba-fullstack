@@ -39,8 +39,6 @@ class Dashboard extends Component {
 		this.props.loadPlayersFromServer();
 		this.userInfo = localStorage.getItem('user');
 
-		alert("* " + this.userInfo);
-
 		this.options = {
 			defaultSortName: 'Name',  // default sort column name
 			defaultSortOrder: 'asc',  // default sort order
@@ -69,17 +67,17 @@ class Dashboard extends Component {
 	}
 
 	handleSaveBtnClick = () => {
-		alert(Object.keys(this.props.userInfo));
+		alert(Object.keys(this.userInfo));
 
 		const playerId = this.refs.table.state.selectedRowKeys;
 		alert(playerId);
-		const username = this.props.userInfo['username'];
+		const username = this.userInfo['username'];
 		alert(username);
 		this.props.addPlayer(playerId, username);
 	}
 
 	handleDropBtnClick = () => {
-		alert(this.props.userInfo['username']);
+		alert(this.userInfo['username']);
 
 		const selected = this.refs.table.state.selectedRowKeys;
 		var rowStr = "";
@@ -125,7 +123,9 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps(state) {
-	localStorage.setItem('user', state.auth.user['username']);
+	if (state.auth.user) {
+		localStorage.setItem('user', state.auth.user['username']);	
+	}
 	alert(localStorage.getItem('user'));
 	return { 
 		content: state.auth.content
