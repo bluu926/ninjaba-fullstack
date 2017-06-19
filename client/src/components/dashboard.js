@@ -69,7 +69,7 @@ class Dashboard extends Component {
 		alert(Object.keys(this.props.user));
 
 		const playerId = this.refs.table.state.selectedRowKeys;
-		const username = this.props.user['username']
+		const username = this.props.user['username'];
 		this.props.addPlayer(playerId, username);
 	}
 
