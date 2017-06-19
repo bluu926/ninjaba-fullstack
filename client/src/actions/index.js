@@ -4,9 +4,9 @@ import cookie from 'react-cookie';
 import { AUTH_USER,  
          AUTH_ERROR,
          UNAUTH_USER,
+         PROTECTED_TEST,
          ADD_PLAYER,
-         ERROR,
-         PROTECTED_TEST } from './types';
+         ERROR } from './types';
 
 const API_URL = 'https://ben-test-ninja.herokuapp.com/api';
 const CLIENT_ROOT_URL = 'https://ben-test-ninja.herokuapp.com';
