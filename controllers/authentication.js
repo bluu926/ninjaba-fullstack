@@ -123,12 +123,12 @@ exports.addPlayer = function(req, res, next) {
 		}
 
 		// if player found, change it is a Free Agent
-		if (foundPlayer.Owner != '--free agent--') {
+		if (foundPlayer.owner != '--free agent--') {
 			res.status(422).json({ error: 'Player is not a free agent.' });
 			return next(err);
 		}
 
-		foundPlayer.Owner = username;
+		foundPlayer.owner = username;
 
 		foundPlayer.save((err) => {
 			if (err) {
