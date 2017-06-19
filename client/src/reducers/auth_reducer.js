@@ -18,7 +18,7 @@ export default function (state = INITIAL_STATE, action) {
     case PROTECTED_TEST:
       return { ...state, content: action.payload };
     case ADD_PLAYER:
-      return { ...state, error: '', message: '' };
+      return { ...state, error: '', message: '', authenticated: true };
     case ERROR:
       return { ...state, error: action.payload };    
   }
