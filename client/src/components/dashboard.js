@@ -126,7 +126,7 @@ function mapStateToProps(state) {
 	if (state.auth.user) {
 		localStorage.setItem('user', state.auth.user);	
 	}
-	
+	alert(Object.keys(localStorage.getItem('user')));
 	return { 
 		content: state.auth.content
 		//user: state.auth.user
