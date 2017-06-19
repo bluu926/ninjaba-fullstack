@@ -39,7 +39,7 @@ class Dashboard extends Component {
 		this.props.loadPlayersFromServer();
 		this.userInfo = localStorage.getItem('user');
 
-		alert(this.userInfo);
+		alert(Object.keys(this.userInfo));
 
 		this.options = {
 			defaultSortName: 'Name',  // default sort column name
@@ -126,7 +126,7 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
 	localStorage.setItem('user', state.auth.user);
-	alert(localStorage.getItem('user'));
+	alert(Object.keys(localStorage.getItem('user')));
 	return { 
 		content: state.auth.content
 		//user: state.auth.user
