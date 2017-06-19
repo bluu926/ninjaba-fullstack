@@ -118,22 +118,19 @@ exports.addPlayer = function(req, res, next) {
 
 	Player.findById(playerId, (err, foundPlayer) => {
 		if (err) {
-			res.status(422).json({ error: 'No player was found.' });
-			return next(err);
+			return res.status(422).json({ error: 'No player was found.' });
 		}
 
 		// if player found, change it is a Free Agent
 		if (foundPlayer.owner != '--free agent--') {
-			res.status(422).json({ error: 'Player is not a free agent.' });
-			return next(err);
+			return res.status(422).json({ error: 'Player is not a free agent.' });
 		}
 
 		foundPlayer.owner = username;
 
 		foundPlayer.save((err) => {
 			if (err) {
-				res.status(422).json({ error: 'Unable to add free agent.' });
-				return next(err);
+				return res.status(422).json({ error: 'Unable to add free agent.' });
 			}
 
 			res.status(200).json({

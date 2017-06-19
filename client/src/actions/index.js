@@ -15,7 +15,6 @@ export function errorHandler(dispatch, error, type) {
   let errorMessage = '';
 
   if(error.data.error) {
-    alert(error.data.error);
     errorMessage = error.data.error;
   } else if(error.data) {
     errorMessage = error.data;
@@ -122,7 +121,7 @@ export function addPlayer(playerId, username) {
 //    })
     axios.post(`${API_URL}/auth/add/${playerId}/${username}`)
     .then(response => {
-      alert('here');
+      alert('added');
       dispatch({
         type: ADD_PLAYER
       });

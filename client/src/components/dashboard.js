@@ -71,6 +71,8 @@ class Dashboard extends Component {
 		const username = this.userInfo['username'];
 
 		this.props.addPlayer(playerId, username);
+
+		alert('made it back');
 	}
 
 	handleDropBtnClick = () => {
