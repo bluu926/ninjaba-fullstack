@@ -67,22 +67,19 @@ class Dashboard extends Component {
 
 	handleSaveBtnClick = () => {
 		alert(Object.keys(this.props.user));
+
+		const playerId = this.refs.table.state.selectedRowKeys;
+		const username = this.props.user['username']
+		this.props.addPlayer(playerId, username);
 	}
 
 	handleDropBtnClick = () => {
-		alert(this.props.user['firstName']);
+		alert(this.props.user['username']);
 
 		const selected = this.refs.table.state.selectedRowKeys;
 		var rowStr = "";
 
 		alert(selected);
-
-		for(var prop in selected){
-			rowStr+=prop+": '"+selected[prop]+"' ";
-		}
-		
-		//alert("is selected: " + selected + ", " + rowStr);
-
 	}
 
 	renderContent() {

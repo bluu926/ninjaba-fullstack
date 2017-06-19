@@ -4,6 +4,8 @@ import cookie from 'react-cookie';
 import { AUTH_USER,  
          AUTH_ERROR,
          UNAUTH_USER,
+         ADD_PLAYER,
+         ERROR,
          PROTECTED_TEST } from './types';
 
 const API_URL = 'https://ben-test-ninja.herokuapp.com/api';
@@ -56,7 +58,10 @@ export function registerUser({ email, username, firstName, lastName, password })
     axios.post(`${API_URL}/auth/register`, { email, username, firstName, lastName, password })
     .then(response => {
       cookie.save('token', response.data.token, { path: '/' });
-      dispatch({ type: AUTH_USER });
+      dispatch({ 
+        type: AUTH_USER,
+        payload: response.data.user
+      });
       window.location.href = CLIENT_ROOT_URL + '/#/dashboard';
     })
     .catch((error) => {
@@ -104,6 +109,22 @@ export function loadPlayersFromServer() {
     })
     .catch((error) => {
       errorHandler(dispatch, error.response, AUTH_ERROR)
+    });
+  }
+}
+
+export function addPlayer(playerId, username) {
+  return function(dispatch) {
+    axios.post(`${API_URL}/auth/add/${playerId}/${username}`, {
+      headers: { 'Authorization': cookie.load('token') }
+    })
+    .then(response => {
+      dispatch({
+        type: ADD_PLAYER
+      });
+    })
+    .catch((error) => {
+      errorHandler(dispatch, error.response, ERROR)
     });
   }
 }

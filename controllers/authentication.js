@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken'),  
       crypto = require('crypto'),
       User = require('../models/user'),
+      Player = require('../models/player'),
       config = require('../config/main');
 			
 function generateToken(user) {  
@@ -105,9 +106,42 @@ exports.register = function(req, res, next) {
 				});
 			});
 		});
-		
-
 	});
+}
+
+//========================================
+// Add Player Route
+//========================================
+exports.addPlayer = function(req, res, next) {
+	const playerId = req.params.playerId;
+	const username = req.params.username;
+
+	Player.findById(playerId, (err, foundPlayer) => {
+		if (err) {
+			res.status(422).json({ error: 'No player was found.' });
+			return next(err);
+		}
+
+		// if player found, change it is a Free Agent
+		if (foundPlayer.Owner != '--free agent--') {
+			res.status(422).json({ error: 'Player is not a free agent.' });
+			return next(err);
+		}
+
+		foundPlayer.Owner = username;
+
+		foundPlayer.save((err) => {
+			if (err) {
+				res.status(422).json({ error: 'Unable to add free agent.' });
+				return next(err);
+			}
+
+			res.status(200).json({
+		        message: 'Player successfully added'
+	  		});
+		});
+	});
+
 }
 
 //========================================
@@ -121,7 +155,7 @@ exports.roleAuthorization = function(role) {
 		
 		User.findById(user._id, function(err, foundUser) {
 			if (err) {
-		    res.status(422).json({ error: 'No user was found.' });
+		    	res.status(422).json({ error: 'No user was found.' });
 				return next(err);
 			}
 			
