@@ -123,7 +123,8 @@ export function addPlayer(playerId, username) {
     axios.post(`${API_URL}/auth/add/${playerId}/${username}`)
     .then(response => {
       dispatch({
-        type: ADD_PLAYER
+        type: ADD_PLAYER,
+        message: response.data.message
       });
     })
     .catch((error) => {
