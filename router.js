@@ -33,6 +33,8 @@ module.exports = function(app) {
 	authRoutes.post('/login', requireLogin, AuthenticationController.login);
 
 	authRoutes.post('/add/:playerId/:username', requireAuth, AuthenticationController.addPlayer);
+
+	authRoutes.post('/drop/:playerId/:username', requireAuth, AuthenticationController.addPlayer);
 	
 	authRoutes.get('/players', requireAuth, (req, res) => {
 		Player.find(function(err, players) {

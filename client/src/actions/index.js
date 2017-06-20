@@ -6,6 +6,7 @@ import { AUTH_USER,
          UNAUTH_USER,
          PROTECTED_TEST,
          ADD_PLAYER,
+         DROP_PLAYER,
          ERROR } from './types';
 
 const API_URL = 'https://ben-test-ninja.herokuapp.com/api';
@@ -132,3 +133,23 @@ export function addPlayer(playerId, username) {
     });
   }
 }
+
+export function dropPlayer(playerId, username) {
+  return function(dispatch) {
+    axios.defaults.headers.common['Authorization'] = cookie.load('token');
+//    axios.post(`${API_URL}/auth/add/${playerId}/${username}`, {
+//      headers: { 'Authorization': cookie.load('token') }
+//    })
+    axios.post(`${API_URL}/auth/drop/${playerId}/${username}`)
+    .then(response => {
+      dispatch({
+        type: DROP_PLAYER,
+        payload: response.data.message
+      });
+    })
+    .catch((error) => {
+      errorHandler(dispatch, error.response, ERROR)
+    });
+  }
+}
+

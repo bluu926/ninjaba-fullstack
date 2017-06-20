@@ -138,7 +138,37 @@ exports.addPlayer = function(req, res, next) {
 	  		});
 		});
 	});
+}
 
+//========================================
+// Drop Player Route
+//========================================
+exports.dropPlayer = function(req, res, next) {
+	const playerId = req.params.playerId;
+	const username = req.params.username;
+
+	Player.findById(playerId, (err, foundPlayer) => {
+		if (err) {
+			return res.status(422).json({ error: 'No player was found.' });
+		}
+		
+		// if player found, change it is a Free Agent
+		if (foundPlayer.owner != username) {
+			return res.status(422).json({ error: 'Player is not owned by owner.' });
+		}
+
+		foundPlayer.owner = username;
+
+		foundPlayer.update({$set: {owner:'--free agent=='}}, (err) => {
+			if (err) {
+				return res.status(422).json({ error: 'Unable to drop player.' });
+			}
+
+			return res.status(200).json({
+		        message: 'Player successfully dropped'
+	  		});
+		});
+	});
 }
 
 //========================================

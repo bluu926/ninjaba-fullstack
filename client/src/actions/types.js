@@ -5,4 +5,5 @@ export const AUTH_USER = 'auth_user',
              RESET_PASSWORD_REQUEST = 'reset_password_request',
              PROTECTED_TEST = 'protected_test',
              ADD_PLAYER = 'add_player',
+             DROP_PLAYER = 'drop_player',
              ERROR = 'error';

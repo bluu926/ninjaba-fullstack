@@ -24,6 +24,10 @@ function enumFormatter(cell, row, enumObject) {
 
 function onRowSelect(row, isSelected){
 	var rowStr = "";
+	var userInfo = JSON.parse(localStorage.getItem('user'));
+	var username = userInfo['username'];
+
+	alert(username);
 
 	for(var prop in row){
 		rowStr+=prop+": '"+row[prop]+"' ";
@@ -78,19 +82,22 @@ class Dashboard extends Component {
 
 		this.props.addPlayer(playerId, username);
 
-		setTimeout(() => this.props.loadPlayersFromServer(), 1500);
+		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
 	}
 
 	handleDropBtnClick = () => {
 		this.props.message = '';
 
-		const selected = this.refs.table.state.selectedRowKeys;
-		var rowStr = "";
+		const playerId = this.refs.table.state.selectedRowKeys;
+		const username = this.userInfo['username'];
 
-		this.props.loadPlayersFromServer();
+		if (!playerId || !username) {
+			return;
+		}
 
-		this.refs.table.reset();
+		this.props.dropPlayer(playerId, username);
 
+		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
 	}
 
 	renderContent() {
