@@ -76,7 +76,11 @@ class Dashboard extends Component {
 
 		this.props.addPlayer(playerId, username);
 
+		alert(this.props.message);
+
 		setTimeout(() => this.props.loadPlayersFromServer(), 1500);
+
+		alert(this.props.message);
 	}
 
 	handleDropBtnClick = () => {

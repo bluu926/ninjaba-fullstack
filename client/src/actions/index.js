@@ -122,8 +122,6 @@ export function addPlayer(playerId, username) {
 //    })
     axios.post(`${API_URL}/auth/add/${playerId}/${username}`)
     .then(response => {
-      alert(response.data);
-      alert(response.data.message);
       dispatch({
         type: ADD_PLAYER,
         message: response.data.message
