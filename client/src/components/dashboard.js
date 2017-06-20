@@ -30,9 +30,9 @@ function onRowSelect(row, isSelected){
 	alert(username);
 	alert(row['owner']);
 
-	if(row['username'] == '--free agent--') {
+	if(row['owner'] == '--free agent--') {
 		alert('free agent');
-	} else if (row['username'] == username) {
+	} else if (row['owner'] == username) {
 		alert('dropable');
 	} else {
 		alert('not yours');
