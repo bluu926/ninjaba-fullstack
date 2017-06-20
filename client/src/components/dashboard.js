@@ -74,6 +74,8 @@ class Dashboard extends Component {
 
 		this.props.loadPlayersFromServer();
 		this.refs.table.reset();
+
+		return true;
 	}
 
 	handleDropBtnClick = () => {
@@ -81,8 +83,6 @@ class Dashboard extends Component {
 
 		const selected = this.refs.table.state.selectedRowKeys;
 		var rowStr = "";
-
-		alert(selected);
 
 		this.props.loadPlayersFromServer();
 		this.refs.table.reset();
