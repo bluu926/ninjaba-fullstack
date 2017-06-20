@@ -28,11 +28,20 @@ function onRowSelect(row, isSelected){
 	var username = userInfo['username'];
 
 	alert(username);
+	alert(row['username']);
 
-	for(var prop in row){
-		rowStr+=prop+": '"+row[prop]+"' ";
+	if(row['username'] == '--free agent--') {
+		alert('free agent');
+	} else if (row['username'] == username) {
+		alert('dropable');
+	} else {
+		alert('not yours');
 	}
-	alert("is selected: " + isSelected + ", " + rowStr);
+
+//	for(var prop in row){
+//		rowStr+=prop+": '"+row[prop]+"' ";
+//	}
+//	alert("is selected: " + isSelected + ", " + rowStr);
 }
 
 class Dashboard extends Component {
