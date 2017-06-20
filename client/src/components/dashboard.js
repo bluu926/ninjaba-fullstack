@@ -72,7 +72,7 @@ class Dashboard extends Component {
 
 		this.props.addPlayer(playerId, username);
 
-		this.props.loadPlayersFromServer();
+		setTimeout(() => this.props.loadPlayersFromServer(), 5000);
 
 		setTimeout(() => this.refs.table.reset(), 5000);
 	}
