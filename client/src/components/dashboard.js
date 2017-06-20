@@ -72,7 +72,7 @@ class Dashboard extends Component {
 
 		this.props.addPlayer(playerId, username);
 
-		alert('made it back');
+		return true;
 	}
 
 	handleDropBtnClick = () => {
@@ -82,6 +82,8 @@ class Dashboard extends Component {
 		var rowStr = "";
 
 		alert(selected);
+
+		return true;
 	}
 
 	renderContent() {
