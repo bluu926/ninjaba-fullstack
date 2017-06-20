@@ -124,7 +124,7 @@ export function addPlayer(playerId, username) {
     .then(response => {
       dispatch({
         type: ADD_PLAYER,
-        message: response.data.message
+        payload: response.data.message
       });
     })
     .catch((error) => {
