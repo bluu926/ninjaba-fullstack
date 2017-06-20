@@ -67,24 +67,22 @@ class Dashboard extends Component {
 	}
 
 	handleSaveBtnClick = () => {
+		this.props.message = '';
+
 		const playerId = this.refs.table.state.selectedRowKeys;
 		const username = this.userInfo['username'];
 
 		if (!playerId || !username) {
-			return false;
+			return;
 		}
 
 		this.props.addPlayer(playerId, username);
 
-		alert(this.props.message);
-
 		setTimeout(() => this.props.loadPlayersFromServer(), 1500);
-
-		alert(this.props.message);
 	}
 
 	handleDropBtnClick = () => {
-		alert(this.userInfo['username']);
+		this.props.message = '';
 
 		const selected = this.refs.table.state.selectedRowKeys;
 		var rowStr = "";
