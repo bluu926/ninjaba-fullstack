@@ -130,7 +130,7 @@ exports.addPlayer = function(req, res, next) {
 
 		foundPlayer.owner = username;
 
-		foundPlayer.update({$set: {foundPlayer.owner:username}}, (err) => {
+		foundPlayer.update({$set: {owner:username}}, (err) => {
 		//foundPlayer.save((err) => {
 			console.log("************************************* " + err);
 
