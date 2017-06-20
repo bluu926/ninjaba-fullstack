@@ -73,6 +73,7 @@ class Dashboard extends Component {
 		this.props.addPlayer(playerId, username);
 
 		this.props.loadPlayersFromServer();
+		this.refs.table.reset();
 	}
 
 	handleDropBtnClick = () => {
@@ -84,6 +85,7 @@ class Dashboard extends Component {
 		alert(selected);
 
 		this.props.loadPlayersFromServer();
+		this.refs.table.reset();
 	}
 
 	renderContent() {
