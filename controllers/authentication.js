@@ -159,7 +159,7 @@ exports.dropPlayer = function(req, res, next) {
 
 		foundPlayer.owner = username;
 
-		foundPlayer.update({$set: {owner:'--free agent=='}}, (err) => {
+		foundPlayer.update({$set: {owner:'--free agent--'}}, (err) => {
 			if (err) {
 				return res.status(422).json({ error: 'Unable to drop player.' });
 			}

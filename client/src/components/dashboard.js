@@ -28,7 +28,7 @@ function onRowSelect(row, isSelected){
 	var username = userInfo['username'];
 
 	alert(username);
-	alert(row['username']);
+	alert(row['owner']);
 
 	if(row['username'] == '--free agent--') {
 		alert('free agent');
