@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import cookie from 'react-cookie';
+import ReactTimeout from 'react-timeout';
 import $ from 'jquery';
 
 const token = cookie.load('token');
@@ -76,7 +77,7 @@ class Dashboard extends Component {
 
 	    this.setTimeout(() => {
 			this.refs.table.reset(); 
-		}, 500);
+		}, 2000);
 	}
 
 	handleDropBtnClick = () => {
@@ -89,7 +90,7 @@ class Dashboard extends Component {
 
 	    this.setTimeout(() => {
 			this.refs.table.reset(); 
-		}, 500);
+		}, 2000);
 
 	}
 
