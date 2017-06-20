@@ -121,7 +121,7 @@ exports.addPlayer = function(req, res, next) {
 			return res.status(422).json({ error: 'No player was found.' });
 		}
 
-		alert(foundPlayer.owner);
+		console.log("************************* " + foundPlayer.owner);
 
 		// if player found, change it is a Free Agent
 		if (foundPlayer.owner != '--free agent--') {
