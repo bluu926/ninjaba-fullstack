@@ -75,9 +75,7 @@ class Dashboard extends Component {
 
 		this.props.loadPlayersFromServer();
 
-	    this.setTimeout(() => {
-			this.refs.table.reset(); 
-		}, 2000);
+	    this.props.setTimeout(this.refs.table.reset(), 5000);
 	}
 
 	handleDropBtnClick = () => {
@@ -88,10 +86,7 @@ class Dashboard extends Component {
 
 		this.props.loadPlayersFromServer();
 
-	    this.setTimeout(() => {
-			this.refs.table.reset(); 
-		}, 2000);
-
+	    this.props.setTimeout(this.refs.table.reset(), 5000);
 	}
 
 	renderContent() {
