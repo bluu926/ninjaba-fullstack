@@ -120,9 +120,7 @@ exports.addPlayer = function(req, res, next) {
 		if (err) {
 			return res.status(422).json({ error: 'No player was found.' });
 		}
-
-		console.log("************************* " + playerId + " " + username + " : " + foundPlayer);
-
+		
 		// if player found, change it is a Free Agent
 		if (foundPlayer.owner != '--free agent--') {
 			return res.status(422).json({ error: 'Player is not a free agent.' });
@@ -131,9 +129,6 @@ exports.addPlayer = function(req, res, next) {
 		foundPlayer.owner = username;
 
 		foundPlayer.update({$set: {owner:username}}, (err) => {
-		//foundPlayer.save((err) => {
-			console.log("************************************* " + err);
-
 			if (err) {
 				return res.status(422).json({ error: 'Unable to add free agent.' });
 			}
