@@ -73,9 +73,7 @@ class Dashboard extends Component {
 		if (!playerId || !username) {
 			return false;
 		}
-
-		alert(this.props.addPlayer(playerId, username));
-
+		
 		setTimeout(() => this.props.loadPlayersFromServer(), 1500);
 	}
 
@@ -103,7 +101,7 @@ class Dashboard extends Component {
 		if(this.props.message) {
 	      return (
 	        <div>
-	          <span><strong> {this.props.errorMessage} </strong></span>
+	          <span><strong> {this.props.message} </strong></span>
 	        </div>
 	  	  );			
 		}
