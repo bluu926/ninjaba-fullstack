@@ -131,6 +131,8 @@ exports.addPlayer = function(req, res, next) {
 		foundPlayer.owner = username;
 
 		foundPlayer.save((err) => {
+			console.log("************************************* " + err);
+
 			if (err) {
 				return res.status(422).json({ error: 'Unable to add free agent.' });
 			}
