@@ -4,6 +4,7 @@ import cookie from 'react-cookie';
 import { AUTH_USER,  
          AUTH_ERROR,
          UNAUTH_USER,
+         RESET_PASSWORD_REQUEST,
          PROTECTED_TEST,
          ADD_PLAYER,
          DROP_PLAYER,
@@ -78,6 +79,23 @@ export function logoutUser() {
 
     window.location.href = CLIENT_ROOT_URL + '/#/login';
   }
+}
+
+export function resetPassword(token, { password }) {
+  return function (dispatch) {
+    axios.post(`${API_URL}/auth/reset-password/${token}`, { password })
+    .then((response) => {
+      dispatch({
+        type: RESET_PASSWORD_REQUEST,
+        payload: response.data.message,
+      });
+      // Redirect to login page on successful password reset
+      browserHistory.push('/#/login');
+    })
+    .catch((error) => {
+      errorHandler(dispatch, error.response, AUTH_ERROR);
+    });
+  };
 }
 
 export function protectedTest() {  

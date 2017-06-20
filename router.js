@@ -32,6 +32,9 @@ module.exports = function(app) {
 	// Login route
 	authRoutes.post('/login', requireLogin, AuthenticationController.login);
 
+	// Password reset route (change password using token)
+	authRoutes.post('/reset-password/:token', AuthenticationController.verifyToken);
+
 	authRoutes.post('/add/:playerId/:username', requireAuth, AuthenticationController.addPlayer);
 
 	authRoutes.post('/drop/:playerId/:username', requireAuth, AuthenticationController.dropPlayer);

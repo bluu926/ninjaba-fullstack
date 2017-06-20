@@ -8,8 +8,8 @@ import $ from 'jquery';
 const token = cookie.load('token');
 
 const allTeams = {
-  'Warriors': 'Warriors',
-  'OKC': 'OKC'
+  'GSW': 'Golden State',
+  'OKC': 'Oklahoma City'
 };
 
 const selectRowProp = {
@@ -152,11 +152,19 @@ class Dashboard extends Component {
 				{this.renderMessage()}
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
-					<TableHeaderColumn dataField='Name' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player Name</TableHeaderColumn>
-					<TableHeaderColumn dataField='Team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
-						filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
-					<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
-					<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
+					<TableHeaderColumn dataField='name' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
+					<TableHeaderColumn dataField='team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
+						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
+					<TableHeaderColumn dataField='g'>Games</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg'>FG</TableHeaderColumn>
+					<TableHeaderColumn dataField='3p'>3PT</TableHeaderColumn>
+					<TableHeaderColumn dataField='ft'>FT</TableHeaderColumn>
+					<TableHeaderColumn dataField='reb'>Reb</TableHeaderColumn>
+					<TableHeaderColumn dataField='ast'>Ast</TableHeaderColumn>
+					<TableHeaderColumn dataField='stl'>Stl</TableHeaderColumn>
+					<TableHeaderColumn dataField='blk'>Blk</TableHeaderColumn>
+					<TableHeaderColumn dataField='to'>TO</TableHeaderColumn>
+					<TableHeaderColumn dataField='pts'>PTs</TableHeaderColumn>
 					<TableHeaderColumn dataField='owner'>Owner</TableHeaderColumn>
 				</BootstrapTable>
 				<button type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>

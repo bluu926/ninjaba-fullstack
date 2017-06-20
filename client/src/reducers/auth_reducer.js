@@ -16,6 +16,8 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, authenticated: false };
     case AUTH_ERROR:
       return { ...state, error: action.payload };
+    case RESET_PASSWORD_REQUEST:
+      return { ...state, message: action.payload.message };      
     case PROTECTED_TEST:
       return { ...state, content: action.payload };
     case ADD_PLAYER:
