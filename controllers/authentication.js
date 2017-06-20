@@ -104,6 +104,8 @@ exports.register = function(req, res, next) {
 				  	token: 'JWT ' + generateToken(userInfo),
 					user: userInfo
 				});
+
+				return 'test';
 			});
 		});
 	});
