@@ -124,8 +124,8 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
 					<TableHeaderColumn dataField='owner'>Owner</TableHeaderColumn>
 				</BootstrapTable>
-				<button type="submit" onSubmit={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
-				<button type="submit" onSubmit={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
+				<button type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
+				<button type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
 			</div>
 		);
 	}

@@ -106,6 +106,7 @@ export function loadPlayersFromServer() {
         type: PROTECTED_TEST,
         payload: response.data.content
       });
+      window.location.href = CLIENT_ROOT_URL + '/#/dashboard';
     })
     .catch((error) => {
       errorHandler(dispatch, error.response, AUTH_ERROR)
