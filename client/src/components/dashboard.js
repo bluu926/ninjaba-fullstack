@@ -122,7 +122,7 @@ class Dashboard extends Component {
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team Name</TableHeaderColumn>
 					<TableHeaderColumn dataField='G'>Games</TableHeaderColumn>
 					<TableHeaderColumn dataField='FG'>Field Goals</TableHeaderColumn>
-					<TableHeaderColumn dataField='Owner'>Owner</TableHeaderColumn>
+					<TableHeaderColumn dataField='owner'>Owner</TableHeaderColumn>
 				</BootstrapTable>
 				<button type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
 				<button type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
