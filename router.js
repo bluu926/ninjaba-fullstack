@@ -27,7 +27,7 @@ module.exports = function(app) {
     // Set auth routes as subgroup/middleware to apiRoutes
 	apiRoutes.use('/auth', authRoutes);
 
-	apiRoutes.get('/players', requireAuth, (req, res) => {
+	apiRoutes.get('/transactions', requireAuth, (req, res) => {
 		Player.find(function(err, players) {
 			if (err)
 				res.send(err);
