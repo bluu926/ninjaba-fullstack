@@ -9,8 +9,8 @@ class HomePage extends Component {
 		this.props.loadTransactionsFromServer();
 
 		this.options = {
-			defaultSortName: 'firstName',  // default sort column name
-			defaultSortOrder: 'asc',  // default sort order
+			defaultSortName: 'createdAt',  // default sort column name
+			defaultSortOrder: 'desc',  // default sort order
 
 			sizePerPageList: [ {
 				text: '10', value: 10
@@ -37,10 +37,13 @@ class HomePage extends Component {
 	render() {
 		return (
 			<div>
-				<div>SOME BANNER AND STUFF WILL GO HERE!</div>
+				<div>PLACEHOLDER TEXT!</div>
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } striped hover condensed>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
-					<TableHeaderColumn dataField='firstName' dataSort={ true }>FG</TableHeaderColumn>
+					<TableHeaderColumn dataField='firstName' dataSort={ true }>Owner</TableHeaderColumn>
+					<TableHeaderColumn dataField='transactionType' dataSort={ true }>Action</TableHeaderColumn>
+					<TableHeaderColumn dataField='playerName' dataSort={ true }>Player</TableHeaderColumn>
+					<TableHeaderColumn dataField='createdAt' dataSort={ true }>Time</TableHeaderColumn>
 				</BootstrapTable>
 			</div>
 		)
