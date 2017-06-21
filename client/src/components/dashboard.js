@@ -186,7 +186,7 @@ class Dashboard extends Component {
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
 					<TableHeaderColumn dataField='name' width='150' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
-					<TableHeaderColumn dataField='team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
+					<TableHeaderColumn dataField='team' width='50' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
 					<TableHeaderColumn dataField='g' width='40'>Games</TableHeaderColumn>
 					<TableHeaderColumn dataField='fg' width='40'>FG</TableHeaderColumn>
