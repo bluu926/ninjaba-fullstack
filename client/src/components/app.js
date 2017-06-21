@@ -7,21 +7,25 @@ const dropdownItems = [
     {href: '#', name: 'Placeholder'},
 ];
 
+const navbar = (
+	<Navbar>
+	    <NavbarHeader href="homepage.html" name="Website Name"/>
+	    <NavbarItems>
+	        <Item link="/#/dashboard" title="Players" />
+	        <Item link="/#/login" title="Login" />
+	        <NavbarDropdown name="Ignore">
+	              <DropdownMenu menuItems={dropdownItems}/>
+	        </NavbarDropdown>
+	    </NavbarItems>
+	</Navbar>
+);
+
 class App extends Component {
 	render() {
 		return (
 			<div>
 				<p>~~~~~</p>
-				<Navbar>
-			        <NavbarHeader href="homepage.html" name="Website Name"/>
-			        <NavbarItems>
-			            <Item link="/#/dashboard" title="Players" />
-			            <Item link="/#/login" title="Login" />
-			            <NavbarDropdown name="Ignore">
-			                  <DropdownMenu menuItems={dropdownItems}/>
-			            </NavbarDropdown>
-			        </NavbarItems>
-			    </Navbar>
+				{navbar}				
 
 				<div className="container">
 					{this.props.children}
