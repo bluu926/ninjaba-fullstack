@@ -14,43 +14,43 @@ const PlayerSchema = new Schema({
 		required: true
 	},
 	g: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	fg: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	ft: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	reb: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	ast: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	reb: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	stl: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	blk: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	to: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	pts: {
-	  	type: String,
+	  	type: Double,
 		required: true
 	},
 	owner: {
