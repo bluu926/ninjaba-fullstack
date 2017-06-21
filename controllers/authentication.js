@@ -186,7 +186,7 @@ exports.recordTransaction = function(req, res, next) {
 			return next(err);
 		}
 		console.log('************ FOUND USER ***************');
-		consel.elog('************ FOUND USER firstName: ' + foundUser.firstName);
+		console.log('************ FOUND USER firstName: ' + foundUser.firstName);
 
 		Player.findById(playerId, (err, foundPlayer) => {
 			if (err) {
@@ -194,7 +194,7 @@ exports.recordTransaction = function(req, res, next) {
 			}
 
 			console.log('************ FOUND PLAYER ***************');
-			consel.elog('************ FOUND USER firstName: ' + foundUser.firstName);
+			console.log('************ FOUND USER firstName: ' + foundUser.firstName);
 
 			let transaction = new Transaction({
 			  	username: username,
