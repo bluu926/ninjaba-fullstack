@@ -20,6 +20,10 @@ const TransactionSchema = new Schema({
 	transactionType: {
 		type: String,
 		required: true
+	},
+	playerName: {
+		type: String,
+		required: true
 	}
 },
 {
