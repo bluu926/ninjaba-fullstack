@@ -17,11 +17,39 @@ const PlayerSchema = new Schema({
 	  	type: String,
 		required: true
 	},
-	fg: {
+	3p: {
 	  	type: String,
 		required: true
 	},
-	fga: {
+	ft: {
+	  	type: String,
+		required: true
+	},
+	reb: {
+	  	type: String,
+		required: true
+	},
+	ast: {
+	  	type: String,
+		required: true
+	},
+	reb: {
+	  	type: String,
+		required: true
+	},
+	stl: {
+	  	type: String,
+		required: true
+	},
+	blk: {
+	  	type: String,
+		required: true
+	},
+	to: {
+	  	type: String,
+		required: true
+	},
+	pts: {
 	  	type: String,
 		required: true
 	},
