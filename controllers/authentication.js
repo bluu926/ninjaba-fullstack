@@ -154,7 +154,7 @@ exports.dropPlayer = function(req, res, next) {
 		
 		// if player found, change it is a Free Agent
 		if (foundPlayer.owner != username) {
-			return res.status(422).json({ error: 'Player is not owned by owner.' });
+			return res.status(422).json({ error: 'You are not owner.' });
 		}
 
 		foundPlayer.owner = username;
