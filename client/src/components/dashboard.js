@@ -9,7 +9,36 @@ const token = cookie.load('token');
 
 const allTeams = {
   'GSW': 'GSW',
-  'OKC': 'OKC'
+  'OKC': 'OKC',
+  'BOS': 'BOS',
+  'CLE': 'CLE',
+  'TOR': 'TOR',
+  'TOT': 'TOT',
+  'WAS': 'WAS',
+  'ATL': 'ATL',
+  'MIL': 'MIL',
+  'IND': 'IND',
+  'CHI': 'CHI',
+  'MIA': 'MIA',
+  'DET': 'DET',
+  'CHO': 'CHO',
+  'NYK': 'NYK',
+  'ORL': 'ORL',
+  'PHI': 'PHI',
+  'BRK': 'BRK',
+  'SAS': 'SAS',
+  'HOU': 'HOU',
+  'LAC': 'LAC',
+  'UTA': 'UTA',
+  'MEM': 'MEM',
+  'POR': 'POR',
+  'DEN': 'DEN',
+  'NOP': 'NOP',
+  'DAL': 'DAL',
+  'SAC': 'SAC',
+  'MIN': 'MIN',
+  'LAL': 'LAL',
+  'PHO': 'PHO'
 };
 
 const selectRowProp = {
@@ -27,15 +56,13 @@ function onRowSelect(row, isSelected){
 	var userInfo = JSON.parse(localStorage.getItem('user'));
 	var username = userInfo['username'];
 
-	alert(username);
-	alert(row['owner']);
 
 	if(row['owner'] == '--free agent--') {
-		alert('free agent');
+		//alert('free agent');
 	} else if (row['owner'] == username) {
-		alert('dropable');
+		//alert('dropable');
 	} else {
-		alert('not yours');
+		//alert('not yours');
 	}
 
 //	for(var prop in row){
