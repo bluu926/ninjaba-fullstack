@@ -124,6 +124,9 @@ class Dashboard extends Component {
 
 		this.props.addPlayer(playerId, username);
 
+		$('.error').hide();
+		$('.success').show();
+
 		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
 	}
 
@@ -139,6 +142,9 @@ class Dashboard extends Component {
 
 		this.props.dropPlayer(playerId, username);
 
+		$('.error').show();
+		$('.success-msage').hide();
+
 		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
 	}
 
@@ -151,8 +157,6 @@ class Dashboard extends Component {
 	}
 
 	renderMessage() {
-		$('.error').hide();
-		$('.success').show();
 		if(this.props.message) {
 	      return (
 	        <div className='success'>
@@ -163,8 +167,6 @@ class Dashboard extends Component {
 	}
 
 	renderAlert() {
-		$('.error').show();
-		$('.success-msage').hide();
 	  	if(this.props.errorMessage) {
 	      return (
 	        <div className='error'>
