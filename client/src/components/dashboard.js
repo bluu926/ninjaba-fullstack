@@ -8,6 +8,7 @@ import $ from 'jquery';
 const token = cookie.load('token');
 
 const allOwners = {
+  '--free agent--': '--FA--',
   'Acgreen831': 'Alan',
   'bluu': 'Ben',
   'PG13': 'Eric',
@@ -15,8 +16,7 @@ const allOwners = {
   'hliang': 'Hugo',
   'hobo': 'Joe',
   'Munch!!!': 'Peter',
-  'Magnificent614': 'Ricky',
-  '--free agent--': '--FA--'
+  'Magnificent614': 'Ricky'
 }
 
 const allTeams = {
@@ -96,8 +96,6 @@ class Dashboard extends Component {
 			defaultSortOrder: 'asc',  // default sort order
 
 			sizePerPageList: [ {
-				text: '1', value: 1
-			}, {
 				text: '10', value: 10
 			}, {
 				text: '25', value: 25
@@ -106,7 +104,7 @@ class Dashboard extends Component {
 			}, {
 				text: 'All', value: 10000
 			} ], // you can change the dropdown list for size per page
-			sizePerPage: 10,  // which size per page you want to locate as default
+			sizePerPage: 25,  // which size per page you want to locate as default
 			pageStartIndex: 1, // where to start counting the pages
 			paginationSize: 3,  // the pagination bar size.
 			prePage: 'Prev', // Previous page button text
@@ -203,7 +201,7 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='blk' width='40' dataSort={ true }>Blk</TableHeaderColumn>
 					<TableHeaderColumn dataField='to' width='40' dataSort={ true }>TO</TableHeaderColumn>
 					<TableHeaderColumn dataField='pts' width='50' dataSort={ true }>Pts</TableHeaderColumn>
-					<TableHeaderColumn dataField='owner' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
+					<TableHeaderColumn dataField='owner' width='90' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners, defaultValue: '--free agent--' } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
 				<button type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
