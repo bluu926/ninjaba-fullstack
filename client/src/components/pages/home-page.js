@@ -9,7 +9,7 @@ class HomePage extends Component {
 		this.props.loadTransactionsFromServer();
 
 		this.options = {
-			defaultSortName: 'name',  // default sort column name
+			defaultSortName: 'firstName',  // default sort column name
 			defaultSortOrder: 'asc',  // default sort order
 
 			sizePerPageList: [ {
