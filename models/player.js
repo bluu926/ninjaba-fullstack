@@ -14,43 +14,43 @@ const PlayerSchema = new Schema({
 		required: true
 	},
 	g: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	fg: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	ft: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	reb: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	ast: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	reb: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	stl: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	blk: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	to: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	pts: {
-	  	type: Double,
+	  	type: Float,
 		required: true
 	},
 	owner: {
