@@ -1,6 +1,7 @@
 const AuthenticationController = require('./controllers/authentication'),
       express = require('express'),
       Player = require('./models/player'),
+      Transaction = require('./models/transaction'),
 	  passportService = require('./config/passport'),
 	  passport = require('passport');
 			
@@ -25,6 +26,14 @@ module.exports = function(app) {
 
     // Set auth routes as subgroup/middleware to apiRoutes
 	apiRoutes.use('/auth', authRoutes);
+
+	apiROutes.get('/players', requireAuth, (req, res) => {
+		Player.find(function(err, players) {
+			if (err)
+				res.send(err);
+			res.send({ content: players });
+		});
+	});
 	
 	// Registration route
 	authRoutes.post('/register', AuthenticationController.register);
@@ -41,11 +50,11 @@ module.exports = function(app) {
 
 	authRoutes.post('/transaction/:username/:transactionType/:playerId', requireAuth, AuthenticationController.recordTransaction);
 	
-	authRoutes.get('/players', requireAuth, (req, res) => {
-		Player.find(function(err, players) {
+	authRoutes.get('/players', (req, res) => {
+		Transaction.find(function(err, transactions) {
 			if (err)
 				res.send(err);
-			res.send({ content: players });
+			res.send({ content: transactions });
 		});
 	});
 

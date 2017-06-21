@@ -125,7 +125,6 @@ export function loadPlayersFromServer() {
         type: PROTECTED_TEST,
         payload: response.data.content
       });
-      window.location.href = CLIENT_ROOT_URL + '/#/dashboard';
     })
     .catch((error) => {
       errorHandler(dispatch, error.response, AUTH_ERROR)
@@ -166,6 +165,21 @@ export function dropPlayer(playerId, username) {
         payload: response.data.message
       });
       axios.post(`${API_URL}/auth/transaction/${username}/drop/${playerId}`);
+    })
+    .catch((error) => {
+      errorHandler(dispatch, error.response, ERROR)
+    });
+  }
+}
+
+export function loadTransactionsFromServer() {  
+  return function(dispatch) {
+    axios.get(`${API_URL}/transactions`)
+    .then(response => {
+      dispatch({
+        type: PROTECTED_TEST,
+        payload: response.data.content
+      });
     })
     .catch((error) => {
       errorHandler(dispatch, error.response, ERROR)
