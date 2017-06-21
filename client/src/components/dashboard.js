@@ -188,7 +188,7 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='name' width='160' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
 					<TableHeaderColumn dataField='team' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
-					<TableHeaderColumn dataField='g' width='40' dataSort={ true }>GMs</TableHeaderColumn>
+					<TableHeaderColumn dataField='g' width='40' dataSort={ true }>Gm</TableHeaderColumn>
 					<TableHeaderColumn dataField='fg' width='40' dataSort={ true }>FG</TableHeaderColumn>
 					<TableHeaderColumn dataField='ft' width='40' dataSort={ true }>FT</TableHeaderColumn>
 					<TableHeaderColumn dataField='reb' width='40' dataSort={ true }>Reb</TableHeaderColumn>
@@ -196,7 +196,7 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='stl' width='40' dataSort={ true }>Stl</TableHeaderColumn>
 					<TableHeaderColumn dataField='blk' width='40' dataSort={ true }>Blk</TableHeaderColumn>
 					<TableHeaderColumn dataField='to' width='40' dataSort={ true }>TO</TableHeaderColumn>
-					<TableHeaderColumn dataField='pts' width='50' dataSort={ true }>PTs</TableHeaderColumn>
+					<TableHeaderColumn dataField='pts' width='50' dataSort={ true }>Pts</TableHeaderColumn>
 					<TableHeaderColumn dataField='owner' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners } }>Owner</TableHeaderColumn>
 				</BootstrapTable>

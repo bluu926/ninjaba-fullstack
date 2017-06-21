@@ -145,6 +145,7 @@ export function addPlayer(playerId, username) {
         type: ADD_PLAYER,
         payload: response.data.message
       });
+      axios.post(`${API_URL}/auth/transaction/${username}/add/${playerId}`);
     })
     .catch((error) => {
       errorHandler(dispatch, error.response, ERROR)
@@ -164,6 +165,7 @@ export function dropPlayer(playerId, username) {
         type: DROP_PLAYER,
         payload: response.data.message
       });
+      axios.post(`${API_URL}/auth/transaction/${username}/drop/${playerId}`);
     })
     .catch((error) => {
       errorHandler(dispatch, error.response, ERROR)
