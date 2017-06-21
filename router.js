@@ -28,11 +28,6 @@ module.exports = function(app) {
 	apiRoutes.use('/auth', authRoutes);
 
 	apiRoutes.get('/transactions', requireAuth, (req, res) => {
-		Player.find(function(err, players) {
-			if (err)
-				res.send(err);
-			res.send({ content: players });
-		});
 		Transaction.find(function(err, transactions) {
 			if (err)
 				res.send(err);
