@@ -157,7 +157,7 @@ class Dashboard extends Component {
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
 					<TableHeaderColumn dataField='g'>Games</TableHeaderColumn>
 					<TableHeaderColumn dataField='fg'>FG</TableHeaderColumn>
-					<TableHeaderColumn dataField='3p'>3PT</TableHeaderColumn>
+//					<TableHeaderColumn dataField='3p'>3PT</TableHeaderColumn>
 					<TableHeaderColumn dataField='ft'>FT</TableHeaderColumn>
 					<TableHeaderColumn dataField='reb'>Reb</TableHeaderColumn>
 					<TableHeaderColumn dataField='ast'>Ast</TableHeaderColumn>

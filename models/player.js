@@ -21,10 +21,6 @@ const PlayerSchema = new Schema({
 	  	type: String,
 		required: true
 	},
-	3p: {
-	  	type: String,
-		required: true
-	},
 	ft: {
 	  	type: String,
 		required: true
