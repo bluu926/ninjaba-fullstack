@@ -1,6 +1,7 @@
 import { AUTH_USER,  
          UNAUTH_USER,
          AUTH_ERROR,
+         RESET_PASSWORD_REQUEST,
          PROTECTED_TEST,
          ADD_PLAYER,
          DROP_PLAYER,
