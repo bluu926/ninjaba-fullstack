@@ -14,37 +14,37 @@ const allOwners = {
 }
 
 const allTeams = {
-  'GSW': 'GSW',
-  'OKC': 'OKC',
+  'ATL': 'ATL',
   'BOS': 'BOS',
+  'BRK': 'BRK',
+  'CHI': 'CHI',
+  'CHO': 'CHO',
   'CLE': 'CLE',
+  'DAL': 'DAL',
+  'DEN': 'DEN',
+  'DET': 'DET',
+  'GSW': 'GSW',
+  'HOU': 'HOU',
+  'IND': 'IND',
+  'LAC': 'LAC',
+  'LAL': 'LAL',
+  'MEM': 'MEM',
+  'MIA': 'MIA',
+  'MIL': 'MIL',
+  'MIN': 'MIN',
+  'NOP': 'NOP',
+  'NYK': 'NYK',
+  'OKC': 'OKC',
+  'ORL': 'ORL',
+  'POR': 'POR',
+  'PHI': 'PHI',
+  'PHO': 'PHO',
   'TOR': 'TOR',
   'TOT': 'TOT',
-  'WAS': 'WAS',
-  'ATL': 'ATL',
-  'MIL': 'MIL',
-  'IND': 'IND',
-  'CHI': 'CHI',
-  'MIA': 'MIA',
-  'DET': 'DET',
-  'CHO': 'CHO',
-  'NYK': 'NYK',
-  'ORL': 'ORL',
-  'PHI': 'PHI',
-  'BRK': 'BRK',
-  'SAS': 'SAS',
-  'HOU': 'HOU',
-  'LAC': 'LAC',
-  'UTA': 'UTA',
-  'MEM': 'MEM',
-  'POR': 'POR',
-  'DEN': 'DEN',
-  'NOP': 'NOP',
-  'DAL': 'DAL',
   'SAC': 'SAC',
-  'MIN': 'MIN',
-  'LAL': 'LAL',
-  'PHO': 'PHO'
+  'SAS': 'SAS',
+  'UTA': 'UTA',
+  'WAS': 'WAS'  
 };
 
 const selectRowProp = {
@@ -151,8 +151,8 @@ class Dashboard extends Component {
 	}
 
 	renderMessage() {
-		$('#error').hide();
-		$('#success').show();
+		$('.error').hide();
+		$('.success').show();
 		if(this.props.message) {
 	      return (
 	        <div className='success'>
@@ -163,8 +163,8 @@ class Dashboard extends Component {
 	}
 
 	renderAlert() {
-		$('#error').show();
-		$('#success-msage').hide();
+		$('.error').show();
+		$('.success-msage').hide();
 	  	if(this.props.errorMessage) {
 	      return (
 	        <div className='error'>
