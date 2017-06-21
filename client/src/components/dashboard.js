@@ -8,8 +8,8 @@ import $ from 'jquery';
 const token = cookie.load('token');
 
 const allTeams = {
-  'GSW': 'Golden State',
-  'OKC': 'Oklahoma City'
+  'GSW': 'GSW',
+  'OKC': 'OKC'
 };
 
 const selectRowProp = {
