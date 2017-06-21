@@ -108,7 +108,7 @@ class Dashboard extends Component {
 			firstPage: 'First', // First page button text
 			lastPage: 'Last', // Last page button text
 			paginationShowsTotal: this.renderShowsTotal,  // Accept bool or function
-			paginationPosition: 'top'  // default is bottom, top and both is all available
+			paginationPosition: 'bottom'  // default is bottom, top and both is all available
 		};
 	}
 
@@ -188,15 +188,15 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='name' width='150' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
 					<TableHeaderColumn dataField='team' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
-					<TableHeaderColumn dataField='g'>Games</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg'>FG</TableHeaderColumn>
-					<TableHeaderColumn dataField='ft'>FT</TableHeaderColumn>
-					<TableHeaderColumn dataField='reb'>Reb</TableHeaderColumn>
-					<TableHeaderColumn dataField='ast'>Ast</TableHeaderColumn>
-					<TableHeaderColumn dataField='stl'>Stl</TableHeaderColumn>
-					<TableHeaderColumn dataField='blk'>Blk</TableHeaderColumn>
-					<TableHeaderColumn dataField='to'>TO</TableHeaderColumn>
-					<TableHeaderColumn dataField='pts'>PTs</TableHeaderColumn>
+					<TableHeaderColumn dataField='g' width='40'>Games</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg' width='40'>FG</TableHeaderColumn>
+					<TableHeaderColumn dataField='ft' width='40'>FT</TableHeaderColumn>
+					<TableHeaderColumn dataField='reb' width='40'>Reb</TableHeaderColumn>
+					<TableHeaderColumn dataField='ast' width='40'>Ast</TableHeaderColumn>
+					<TableHeaderColumn dataField='stl' width='40'>Stl</TableHeaderColumn>
+					<TableHeaderColumn dataField='blk' width='40'>Blk</TableHeaderColumn>
+					<TableHeaderColumn dataField='to' width='40'>TO</TableHeaderColumn>
+					<TableHeaderColumn dataField='pts' width='40'>PTs</TableHeaderColumn>
 					<TableHeaderColumn dataField='owner' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
