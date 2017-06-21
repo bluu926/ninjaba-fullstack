@@ -151,9 +151,11 @@ class Dashboard extends Component {
 	}
 
 	renderMessage() {
+		$('#error').hide();
+		$('#success').show();
 		if(this.props.message) {
 	      return (
-	        <div class='success-message'>
+	        <div className='success'>
 	          <span><strong> {this.props.message} </strong></span>
 	        </div>
 	  	  );			
@@ -161,9 +163,11 @@ class Dashboard extends Component {
 	}
 
 	renderAlert() {
-	  if(this.props.errorMessage) {
+		$('#error').show();
+		$('#success-msage').hide();
+	  	if(this.props.errorMessage) {
 	      return (
-	        <div class='error-message'>
+	        <div className='error'>
 	          <span><strong>Error!</strong> {this.props.errorMessage}</span>
 	        </div>
 	  	  );
