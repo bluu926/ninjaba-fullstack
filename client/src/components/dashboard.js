@@ -185,10 +185,10 @@ class Dashboard extends Component {
 				{this.renderMessage()}
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
-					<TableHeaderColumn dataField='name' width='150' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
-					<TableHeaderColumn dataField='team' width='50' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
+					<TableHeaderColumn dataField='name' width='160' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
+					<TableHeaderColumn dataField='team' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
-					<TableHeaderColumn dataField='g' width='40'>Games</TableHeaderColumn>
+					<TableHeaderColumn dataField='g' width='40'>GMs</TableHeaderColumn>
 					<TableHeaderColumn dataField='fg' width='40'>FG</TableHeaderColumn>
 					<TableHeaderColumn dataField='ft' width='40'>FT</TableHeaderColumn>
 					<TableHeaderColumn dataField='reb' width='40'>Reb</TableHeaderColumn>
@@ -197,7 +197,7 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='blk' width='40'>Blk</TableHeaderColumn>
 					<TableHeaderColumn dataField='to' width='40'>TO</TableHeaderColumn>
 					<TableHeaderColumn dataField='pts' width='50'>PTs</TableHeaderColumn>
-					<TableHeaderColumn dataField='owner' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
+					<TableHeaderColumn dataField='owner' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
 				<button type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
