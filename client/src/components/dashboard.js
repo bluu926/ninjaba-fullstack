@@ -153,7 +153,7 @@ class Dashboard extends Component {
 	renderMessage() {
 		if(this.props.message) {
 	      return (
-	        <div>
+	        <div class='success-message'>
 	          <span><strong> {this.props.message} </strong></span>
 	        </div>
 	  	  );			
@@ -163,7 +163,7 @@ class Dashboard extends Component {
 	renderAlert() {
 	  if(this.props.errorMessage) {
 	      return (
-	        <div>
+	        <div class='error-message'>
 	          <span><strong>Error!</strong> {this.props.errorMessage}</span>
 	        </div>
 	  	  );
