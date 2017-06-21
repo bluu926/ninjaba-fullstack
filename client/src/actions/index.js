@@ -128,6 +128,7 @@ export function loadPlayersFromServer() {
       window.location.href = CLIENT_ROOT_URL + '/#/dashboard';
     })
     .catch((error) => {
+      alert('here');
       errorHandler(dispatch, error.response, AUTH_ERROR)
     });
   }
