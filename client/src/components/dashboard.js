@@ -53,7 +53,7 @@ class Dashboard extends Component {
 		this.userInfo = JSON.parse(localStorage.getItem('user'));
 
 		this.options = {
-			defaultSortName: 'Name',  // default sort column name
+			defaultSortName: 'name',  // default sort column name
 			defaultSortOrder: 'asc',  // default sort order
 
 			sizePerPageList: [ {
