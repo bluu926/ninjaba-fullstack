@@ -9,7 +9,8 @@ const token = cookie.load('token');
 
 const allOwners = {
   'bluu': 'Ben',
-  'hliang': 'Hugo'
+  'hliang': 'Hugo',
+  '--free agent--': '--free agent--'
 }
 
 const allTeams = {
