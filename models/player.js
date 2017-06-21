@@ -17,6 +17,10 @@ const PlayerSchema = new Schema({
 	  	type: String,
 		required: true
 	},
+	fg: {
+	  	type: String,
+		required: true
+	},
 	3p: {
 	  	type: String,
 		required: true
