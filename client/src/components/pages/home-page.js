@@ -42,8 +42,6 @@ class HomePage extends Component {
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
 					<TableHeaderColumn dataField='firstName' dataSort={ true }>FG</TableHeaderColumn>
 				</BootstrapTable>
-				<button type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
-				<button type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
 			</div>
 		)
 	}
