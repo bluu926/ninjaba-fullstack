@@ -20,13 +20,13 @@ export default function (state = INITIAL_STATE, action) {
     case RESET_PASSWORD_REQUEST:
       return { ...state, message: action.payload.message };      
     case PROTECTED_TEST:
-      return { ...state, message: '', content: action.payload };
+      return { ...state, content: action.payload };
     case ADD_PLAYER:
       return { ...state, error: '', message: action.payload };
     case DROP_PLAYER:
       return { ...state, error: '', message: action.payload };
     case ERROR:
-      return { ...state, error: action.payload };    
+      return { ...state, message: '', error: action.payload };    
   }
 
   return state;
