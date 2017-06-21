@@ -33,6 +33,11 @@ module.exports = function(app) {
 				res.send(err);
 			res.send({ content: players });
 		});
+		Transaction.find(function(err, transactions) {
+			if (err)
+				res.send(err);
+			res.send({ content: transactions });
+		});
 	});
 	
 	// Registration route
@@ -51,10 +56,10 @@ module.exports = function(app) {
 	authRoutes.post('/transaction/:username/:transactionType/:playerId', requireAuth, AuthenticationController.recordTransaction);
 	
 	authRoutes.get('/players', (req, res) => {
-		Transaction.find(function(err, transactions) {
+		Player.find(function(err, players) {
 			if (err)
 				res.send(err);
-			res.send({ content: transactions });
+			res.send({ content: players });
 		});
 	});
 
