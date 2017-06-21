@@ -124,9 +124,6 @@ class Dashboard extends Component {
 
 		this.props.addPlayer(playerId, username);
 
-		$('.error').hide();
-		$('.success').show();
-
 		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
 	}
 
@@ -141,9 +138,6 @@ class Dashboard extends Component {
 		}
 
 		this.props.dropPlayer(playerId, username);
-
-		$('.error').show();
-		$('.success-msage').hide();
 
 		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
 	}
