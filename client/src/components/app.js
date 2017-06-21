@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
+import {Navbar, NavbarHeader, NavbarItems, Item, NavbarDropdown, DropdownMenu} from 'react-bootstrap-navbar';
+
+const dropdownItems = [
+    {href: '#', name: 'Placeholder'},
+    {href: '#', name: 'Placeholder'},
+    {href: '#', name: 'Placeholder'},
+];
 
 class App extends Component {
 	render() {
 		return (
 			<div>
-			<p>Header here</p>
+				<p>~~~~~</p>
+				<Navbar>
+			        <NavbarHeader href="homepage.html" name="Website Name"/>
+			        <NavbarItems>
+			            <Item link="/#/dashboard" title="Players" />
+			            <Item link="/#/login" title="Login" />
+			            <NavbarDropdown name="Ignore">
+			                  <DropdownMenu menuItems={dropdownItems}/>
+			            </NavbarDropdown>
+			        </NavbarItems>
+			    </Navbar>
 
-			<div className="container">
-				{this.props.children}
-			</div>
+				<div className="container">
+					{this.props.children}
+				</div>
 
-			<p>Footer here</p>
+				<p>Footer here</p>
 			</div>
 		);
 	}
