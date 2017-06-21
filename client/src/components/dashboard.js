@@ -8,8 +8,14 @@ import $ from 'jquery';
 const token = cookie.load('token');
 
 const allOwners = {
+  'Acgreen831': 'Alan',
   'bluu': 'Ben',
+  'PG13': 'Eric',
+  'Frank167': 'Frank',
   'hliang': 'Hugo',
+  'hobo': 'Joe',
+  'Munch!!!': 'Peter',
+  'Magnificent614': 'Ricky',
   '--free agent--': '--FA--'
 }
 
@@ -198,7 +204,7 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='to' width='40' dataSort={ true }>TO</TableHeaderColumn>
 					<TableHeaderColumn dataField='pts' width='50' dataSort={ true }>Pts</TableHeaderColumn>
 					<TableHeaderColumn dataField='owner' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
-						filter={ { type: 'SelectFilter', options: allOwners } }>Owner</TableHeaderColumn>
+						filter={ { type: 'SelectFilter', options: allOwners, defaultValue: '--free agent--' } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
 				<button type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
 				<button type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
