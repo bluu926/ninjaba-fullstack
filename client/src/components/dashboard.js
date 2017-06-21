@@ -196,7 +196,7 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='stl' width='40'>Stl</TableHeaderColumn>
 					<TableHeaderColumn dataField='blk' width='40'>Blk</TableHeaderColumn>
 					<TableHeaderColumn dataField='to' width='40'>TO</TableHeaderColumn>
-					<TableHeaderColumn dataField='pts' width='40'>PTs</TableHeaderColumn>
+					<TableHeaderColumn dataField='pts' width='50'>PTs</TableHeaderColumn>
 					<TableHeaderColumn dataField='owner' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
