@@ -8,6 +8,7 @@ import { AUTH_USER,
          PROTECTED_TEST,
          ADD_PLAYER,
          DROP_PLAYER,
+         HOME_PAGE,
          ERROR } from './types';
 
 const API_URL = 'https://ben-test-ninja.herokuapp.com/api';
@@ -177,7 +178,7 @@ export function loadTransactionsFromServer() {
     axios.get(`${API_URL}/transactions`)
     .then(response => {
       dispatch({
-        type: PROTECTED_TEST,
+        type: HOME_PAGE,
         payload: response.data.content
       });
     })

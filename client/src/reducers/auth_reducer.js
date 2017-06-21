@@ -5,6 +5,7 @@ import { AUTH_USER,
          PROTECTED_TEST,
          ADD_PLAYER,
          DROP_PLAYER,
+         HOME_PAGE,
          ERROR } from '../actions/types';
 
 const INITIAL_STATE = { error: '', message: '', content: '', authenticated: false}
@@ -25,6 +26,8 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, error: '', message: action.payload };
     case DROP_PLAYER:
       return { ...state, error: '', message: action.payload };
+    case HOME_PAGE:
+      return { ...state, content: action.payload };
     case ERROR:
       return { ...state, message: '', error: action.payload };    
   }
