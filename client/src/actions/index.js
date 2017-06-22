@@ -43,7 +43,7 @@ export function loginUser({ username, password }) {
   return function(dispatch) {
     axios.post(`${API_URL}/auth/login`, { username, password })
     .then(response => {
-      cookie.save('token', response.data.token, { path: '/' });
+      cookie.save('token', response.data.token, { path: '/#/' });
       dispatch({ 
         type: AUTH_USER,
         payload: response.data.user
@@ -60,7 +60,7 @@ export function registerUser({ email, username, firstName, lastName, password })
   return function(dispatch) {
     axios.post(`${API_URL}/auth/register`, { email, username, firstName, lastName, password })
     .then(response => {
-      cookie.save('token', response.data.token, { path: '/' });
+      cookie.save('token', response.data.token, { path: '/#/' });
       dispatch({ 
         type: AUTH_USER,
         payload: response.data.user
