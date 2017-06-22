@@ -4,9 +4,8 @@ import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap-nav
 class HeaderNav extends Component {
 	render() {
 		return (
-		  <div>
-		  	TEST
-		  </div>
+		  <Navbar inverse collapseOnSelect>
+		  </Navbar>
 		);
 	}
 }
