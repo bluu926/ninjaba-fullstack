@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
-import {Navbar, NavbarHeader, NavbarItems, Item, NavbarDropdown, DropdownMenu} from 'react-bootstrap-navbar';
 
-const dropdownItems = [
-    {href: '#', name: 'Placeholder'},
-    {href: '#', name: 'Placeholder'},
-    {href: '#', name: 'Placeholder'},
-];
-
-var App = React.createClass({
+class App extends Component {
 	render() {
 		return (
 			<div>
@@ -19,6 +12,8 @@ var App = React.createClass({
 
 				<p>Footer here</p>
 			</div>
-		)
+		);
 	}
-});
+}
+
+export default App;
