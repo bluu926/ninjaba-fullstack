@@ -5,7 +5,6 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<p>Header here</p>
 				<HeaderNav/>
 
 				<div className="container">
