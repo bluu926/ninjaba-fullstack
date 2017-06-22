@@ -13,7 +13,7 @@ class HeaderNav extends Component {
 			        <span className='icon-bar'></span>
 			        <span className='icon-bar'></span>
 			      </button>
-			      <a className='navbar-brand' href='/'>Ninja Basketball</a>
+			      <a className='navbar-brand' href='/#/'>Ninja Basketball</a>
 			    </div>
 
 			    <div className='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
@@ -22,7 +22,7 @@ class HeaderNav extends Component {
 			      </ul>
 			      <ul className='nav navbar-nav navbar-right'>
 			        <li><a href='/#/login'>Login</a></li>
-			        <li><a href='/#/dashboard'>Playersk</a></li>
+			        <li><a href='/#/dashboard'>Players</a></li>
 			        <li className='dropdown'>
 			          <a href='#' className='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Dropdown <span className='caret'></span></a>
 			          <ul className='dropdown-menu'>
