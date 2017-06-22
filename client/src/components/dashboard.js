@@ -11,11 +11,13 @@ const allOwners = {
   '--free agent--': '--FA--',
   'Acgreen831': 'Alan',
   'bluu': 'Ben',
+  'dfung': 'Danny',
   'PG13': 'Eric',
   'Frank167': 'Frank',
   'hliang': 'Hugo',
   'hobo': 'Joe',
   'Munch!!!': 'Peter',
+  'Mad': 'Sam',
   'Magnificent614': 'Ricky'
 }
 
