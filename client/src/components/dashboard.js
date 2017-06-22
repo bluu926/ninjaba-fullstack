@@ -94,6 +94,8 @@ class Dashboard extends Component {
 		this.props.loadPlayersFromServer();
 		this.userInfo = JSON.parse(localStorage.getItem('user'));
 
+		alert(this.userInfo);
+
 		this.options = {
 			defaultSortName: 'name',  // default sort column name
 			defaultSortOrder: 'asc',  // default sort order
