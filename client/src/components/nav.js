@@ -7,7 +7,7 @@ const dropdownItems = [
     {href: '#', name: 'Placeholder'},
 ];
  
-class Nav extends Component {
+class Nav extends React.Component {
     render() { 
         return (
             <Navbar>
