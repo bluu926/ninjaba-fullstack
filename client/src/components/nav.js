@@ -29,7 +29,7 @@ class HeaderNav extends Component {
 			            <li><a href='#'>Action</a></li>
 			            <li><a href='#'>Another action</a></li>
 			            <li role='separator' className='divider'></li>
-			            <li><a href='#'>Separated link</a></li>
+			            <li><a href='/#/logout'>Logout</a></li>
 			          </ul>
 			        </li>
 			      </ul>

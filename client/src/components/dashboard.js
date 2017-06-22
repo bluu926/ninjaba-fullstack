@@ -89,6 +89,7 @@ function onRowSelect(row, isSelected){
 class Dashboard extends Component {
 
 	constructor(props) {
+		alert(token);
 		super(props);
 		//this.props.protectedTest();
 		this.props.loadPlayersFromServer();
@@ -110,10 +111,10 @@ class Dashboard extends Component {
 			sizePerPage: 25,  // which size per page you want to locate as default
 			pageStartIndex: 1, // where to start counting the pages
 			paginationSize: 3,  // the pagination bar size.
-			prePage: 'Prev', // Previous page button text
-			nextPage: 'Next', // Next page button text
-			firstPage: 'First', // First page button text
-			lastPage: 'Last', // Last page button text
+			prePage: '<', // Previous page button text
+			nextPage: '>', // Next page button text
+			firstPage: '<<', // First page button text
+			lastPage: '>>', // Last page button text
 			paginationShowsTotal: this.renderShowsTotal,  // Accept bool or function
 			paginationPosition: 'bottom'  // default is bottom, top and both is all available
 		};
