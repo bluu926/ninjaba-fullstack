@@ -46,8 +46,6 @@ class Login extends Component {
 }
 
 function mapStateToProps(state) {  
-  alert(state.auth.error);
-  alert(state.auth.message);
   return {
     errorMessage: state.auth.error,
     message: state.auth.message

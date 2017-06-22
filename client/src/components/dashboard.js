@@ -220,6 +220,13 @@ function mapStateToProps(state) {
 		localStorage.setItem('user', JSON.stringify(state.auth.user));	
 	}
 
+
+  alert(state.auth.error);
+  alert(state.auth.message);
+
+  alert(state.auth.user);
+  alert(state.auth.content);
+
 	return { 
 		content: state.auth.content,
 		errorMessage: state.auth.error,
