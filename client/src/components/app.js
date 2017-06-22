@@ -1,12 +1,34 @@
 import React, { Component } from 'react';
-import Nav from './nav';
+import {Navbar, NavbarHeader, NavbarItems, Item, NavbarDropdown, DropdownMenu} from 'react-bootstrap-navbar';
 
-class App extends Component {
+const dropdownItems = [
+    {href: '#', name: 'Placeholder'},
+    {href: '#', name: 'Placeholder'},
+    {href: '#', name: 'Placeholder'},
+];
+ 
+var NavBar = React.createClass({
+    render() { 
+        return (
+            <Navbar>
+                <NavbarHeader href="/" name="Website Name"/>
+                <NavbarItems>
+                    <Item link="/#/dashboard" title="Players" />
+                    <NavbarDropdown name="Placeholder">
+                          <DropdownMenu menuItems={dropdownItems}/>
+                    </NavbarDropdown>
+                </NavbarItems>
+            </Navbar>
+        )
+	}
+});
+
+var App = React.createClass({
 	render() {
 		return (
 			<div>
 				<p>Header here</p>
-				<Nav />
+				<NavBar />
 
 				<div className="container">
 					{this.props.children}
@@ -14,8 +36,6 @@ class App extends Component {
 
 				<p>Footer here</p>
 			</div>
-		);
+		)
 	}
-}
-
-export default App;
+});
