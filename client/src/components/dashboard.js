@@ -89,11 +89,12 @@ function onRowSelect(row, isSelected){
 class Dashboard extends Component {
 
 	constructor(props) {
-		alert(token);
 		super(props);
 		//this.props.protectedTest();
 		this.props.loadPlayersFromServer();
 		this.userInfo = JSON.parse(localStorage.getItem('user'));
+
+		alert(this.userInfo['username']);
 
 		this.options = {
 			defaultSortName: 'name',  // default sort column name

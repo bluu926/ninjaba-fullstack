@@ -48,8 +48,9 @@ export function loginUser({ username, password }) {
         type: AUTH_USER,
         payload: response.data.user
       });
-      alert(response.data.user);
-      window.location.href = CLIENT_ROOT_URL + '/#/dashboard';
+      alert(response.data.user['username']);
+      //window.location.href = CLIENT_ROOT_URL + '/#/dashboard';
+      browserHistory.push('/#/dashboard');
     })
     .catch((error) => {
       errorHandler(dispatch, error.response, AUTH_ERROR)
