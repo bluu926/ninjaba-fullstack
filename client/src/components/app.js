@@ -7,7 +7,8 @@ const dropdownItems = [
     {href: '#', name: 'Placeholder'},
 ];
  
-const NavBar = (
+const NavBar = React.createClass({
+    render() { return (
     <Navbar>
         <NavbarHeader href="/" name="Website Name"/>
         <NavbarItems>
@@ -17,7 +18,9 @@ const NavBar = (
             </NavbarDropdown>
         </NavbarItems>
     </Navbar>
-);
+    )
+	}
+});
 
 class App extends Component {
 	render() {
