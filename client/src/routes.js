@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
@@ -10,7 +10,7 @@ import Login from './components/auth/login';
 import Dashboard from './components/dashboard';
 import RequireAuth from './components/auth/require-auth';
 
-export default class Routes extends React.Component{
+class Routes extends Component{
 	render() {
 		return(
 			<Route path="/" component={App}>
@@ -23,4 +23,6 @@ export default class Routes extends React.Component{
 			</Route>
 		)
 	}
-};
+}
+
+export default Routes;
