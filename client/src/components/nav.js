@@ -21,7 +21,7 @@ class HeaderNav extends Component {
 			        
 			      </ul>
 			      <ul className='nav navbar-nav navbar-right'>
-			        <li><a href='/#/login'>Login</a></li>
+//			        <li><a href='/#/login'>Login</a></li>
 			        <li><a href='/#/dashboard'>Players</a></li>
 			        <li className='dropdown'>
 			          <a href='#' className='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Dropdown <span className='caret'></span></a>
