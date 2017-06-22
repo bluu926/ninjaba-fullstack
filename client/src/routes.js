@@ -12,7 +12,7 @@ import Dashboard from './components/dashboard';
 import RequireAuth from './components/auth/require-auth';
 
 export default (
-	<Route path="home" component={App}>
+	<Route path="/" component={App}>
 		<IndexRoute component={HomePage} />
 		<Route path="register" component={Register} />
 		<Route path="login" component={Login} />
