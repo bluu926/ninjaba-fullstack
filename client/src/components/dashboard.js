@@ -91,7 +91,8 @@ class Dashboard extends Component {
 	constructor(props) {
 		super(props);
 		//this.props.protectedTest();
-		this.props.loadPlayersFromServer();
+		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
+		//this.props.loadPlayersFromServer();
 		this.userInfo = JSON.parse(localStorage.getItem('user'));
 
 		this.options = {
