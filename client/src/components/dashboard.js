@@ -18,7 +18,8 @@ const allOwners = {
   'hobo': 'Joe',
   'Munch!!!': 'Peter',
   'Mad': 'Sam',
-  'Magnificent614': 'Ricky'
+  'Magnificent614': 'Ricky',
+  'Betterthandreamteam': 'Wayne'
 }
 
 const allTeams = {
