@@ -48,7 +48,7 @@ export function loginUser({ username, password }) {
         type: AUTH_USER,
         payload: response.data.user
       });
-      alert('index.js: ' + response.data.user['username']);
+      //alert('index.js: ' + response.data.user['username']);
       window.location.href = CLIENT_ROOT_URL + '/#/dashboard';
     })
     .catch((error) => {
