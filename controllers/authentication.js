@@ -127,7 +127,7 @@ exports.addPlayer = function(req, res, next) {
 			return res.status(422).json({ error: 'Player is not a free agent.' });
 		}
 
-		const numOfPlayers = User.findOne({ username: username}).count();
+		const numOfPlayers = Player.find({ owner: username}).count();
 
 		if(!numOfPlayers || numOfPlayers >= 5) {
 			return res.status(422).json({ error: 'Player limit reached.'});
