@@ -119,7 +119,9 @@ class Dashboard extends Component {
 			paginationPosition: 'bottom'  // default is bottom, top and both is all available
 		};
 
-		setTimeout(() => this.refs.table.reset(), 1000);
+alert(this.ref.table);
+
+//		setTimeout(() => this.refs.table.reset(), 1000);
 	}
 
 	handleSaveBtnClick = () => {
