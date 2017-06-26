@@ -138,23 +138,23 @@ exports.addPlayer = function(req, res, next) {
 				console.log("********* NUMBER OF PLAYERS INSIDE ********** " + numOfPlayers);
 				return res.status(422).json({ error: 'Player limit reached.'});
 			}
-		});
 
-		console.log("**************IT IS OK TO CONTINUE******************");
+			console.log("**************IT IS OK TO CONTINUE******************");
 
-		foundPlayer.owner = username;
+			foundPlayer.owner = username;
 
-		console.log("**************IT IS OK TO CONTINUE 2******************");
+			console.log("**************IT IS OK TO CONTINUE 2******************");
 
-		foundPlayer.update({$set: {owner:username}}, (err) => {
-			console.log("**************IT IS OK TO CONTINUE 3******************");
-			if (err) {
-				return res.status(422).json({ error: 'Unable to add free agent.' });
-			}
-			console.log("**************IT IS OK TO CONTINUE 4******************");
-			return res.status(200).json({
-		        message: 'Player successfully added'
-	  		});
+			foundPlayer.update({$set: {owner:username}}, (err) => {
+				console.log("**************IT IS OK TO CONTINUE 3******************");
+				if (err) {
+					return res.status(422).json({ error: 'Unable to add free agent.' });
+				}
+				console.log("**************IT IS OK TO CONTINUE 4******************");
+				return res.status(200).json({
+			        message: 'Player successfully added'
+		  		});
+			});
 		});
 	});
 }
