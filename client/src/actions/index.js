@@ -180,15 +180,16 @@ export function loadTransactionsFromServer() {
           headers: { 'Authorization': cookie.load('token') }
     })
     .then(response => {
-      alert(this.response);
+      alert("inside then: " + response);
+      alert("inside then 2: " + response.data.transaction);
       dispatch({
         type: TRANSACTION,
         payload: response.data.transaction
       });
     })
     .catch((error) => {
-      alert(error);
-      alert(error.response);
+      alert("inside error: " + error);
+      alert("inside error 2: " + error.response);
       errorHandler(dispatch, error.response, ERROR)
     });
   }
