@@ -137,6 +137,8 @@ exports.addPlayer = function(req, res, next) {
 			}
 		});
 
+		console.log("**************IT IS OK TO CONTINUE******************");
+
 		foundPlayer.owner = username;
 
 		foundPlayer.update({$set: {owner:username}}, (err) => {
