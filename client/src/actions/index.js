@@ -180,6 +180,7 @@ export function loadTransactionsFromServer() {
           headers: { 'Authorization': cookie.load('token') }
     })
     .then(response => {
+      alert(response.data.transaction);
       dispatch({
         type: TRANSACTION,
         payload: response.data.transaction
