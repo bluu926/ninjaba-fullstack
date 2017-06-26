@@ -98,7 +98,7 @@ class Dashboard extends Component {
 		//this.props.loadPlayersFromServer();
 		this.userInfo = JSON.parse(localStorage.getItem('user'));
 
-		this.displayTableByTotal = 'true';
+		this.displayTableByTotal = true;
 
 		this.options = {
 			defaultSortName: 'name',  // default sort column name
@@ -128,7 +128,7 @@ class Dashboard extends Component {
 
 	handleSaveBtnClick = () => {
 		this.props.message = '';
-		alert(this.props.displayTableByTotal);
+		alert(this.displayTableByTotal);
 
 		const playerId = this.refs.table.state.selectedRowKeys;
 		const username = this.userInfo['username'];
@@ -214,8 +214,8 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='team' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
 					<TableHeaderColumn dataField='g' width='40' dataSort={ true }>Gm</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg' width='40' dataSort={ true } hidden={ this.props.displayTableByTotal }>FG</TableHeaderColumn>
-					<TableHeaderColumn dataField='ft' width='40' dataSort={ true } hidden={ this.props.displayTableByTotal }>FT</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FG</TableHeaderColumn>
+					<TableHeaderColumn dataField='ft' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FT</TableHeaderColumn>
 					<TableHeaderColumn dataField='reb' width='40' dataSort={ true }>Reb</TableHeaderColumn>
 					<TableHeaderColumn dataField='ast' width='40' dataSort={ true }>Ast</TableHeaderColumn>
 					<TableHeaderColumn dataField='stl' width='40' dataSort={ true }>Stl</TableHeaderColumn>
