@@ -128,7 +128,6 @@ class Dashboard extends Component {
 
 	handleSaveBtnClick = () => {
 		this.props.message = '';
-		alert(this.displayTableByTotal);
 
 		const playerId = this.refs.table.state.selectedRowKeys;
 		const username = this.userInfo['username'];
@@ -165,6 +164,10 @@ class Dashboard extends Component {
 
 		$('#add-player-btn').hide();
 		$('#drop-player-btn').hide();
+	}
+
+	toggleColumns = () => {
+		this.displayTableByTotal = !this.displayTableByTotal;
 	}
 
 	renderContent() {
@@ -208,6 +211,7 @@ class Dashboard extends Component {
 			<div>
 				{this.renderAlert()}
 				{this.renderMessage()}
+				<button onClick={ this.toggleColumns } className='btn btn-default'>Toggle Total vs Per Game</button>
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
 					<TableHeaderColumn dataField='name' width='160' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
