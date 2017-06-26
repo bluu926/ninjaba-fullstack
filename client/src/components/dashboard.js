@@ -168,6 +168,10 @@ class Dashboard extends Component {
 
 	toggleColumns = () => {
 		this.displayTableByTotal = !this.displayTableByTotal;
+
+		alert(this.displayTableByTotal);
+
+		this.refs.table.reset();
 	}
 
 	renderContent() {
@@ -233,8 +237,6 @@ class Dashboard extends Component {
 				<button id="drop-player-btn" type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
 			</div>
 		);
-
-		setTimeout(() => this.refs.table.reset(), 1000);
 	}
 
 }
