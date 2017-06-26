@@ -127,7 +127,7 @@ exports.addPlayer = function(req, res, next) {
 			return res.status(422).json({ error: 'Player is not a free agent.' });
 		}
 
-		Player.find({ owner: username}).count((err, numberOfPlayers) -> {
+		Player.find({ owner: username}).count((err, numberOfPlayers) => {
 
 			console.log("********* NUMBER OF PLAYERS ********** " + numOfPlayers);
 
