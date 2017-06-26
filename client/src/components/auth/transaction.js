@@ -52,7 +52,7 @@ class Transaction extends Component {
 
 function mapStateToProps(state) {
 	return { 
-		content: state.auth.transaction,
+		transaction: state.auth.transaction,
 		errorMessage: state.auth.error
 	};
 }
