@@ -98,6 +98,8 @@ class Dashboard extends Component {
 		//this.props.loadPlayersFromServer();
 		this.userInfo = JSON.parse(localStorage.getItem('user'));
 
+		this.displayTableByTotal = true;
+
 		this.options = {
 			defaultSortName: 'name',  // default sort column name
 			defaultSortOrder: 'asc',  // default sort order
@@ -211,8 +213,8 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='team' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
 					<TableHeaderColumn dataField='g' width='40' dataSort={ true }>Gm</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg' width='40' dataSort={ true }>FG</TableHeaderColumn>
-					<TableHeaderColumn dataField='ft' width='40' dataSort={ true }>FT</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg' width='40' dataSort={ true } hidden={this.props.displayTableByTotal}>FG</TableHeaderColumn>
+					<TableHeaderColumn dataField='ft' width='40' dataSort={ true } hidden={this.props.displayTableByTotal}>FT</TableHeaderColumn>
 					<TableHeaderColumn dataField='reb' width='40' dataSort={ true }>Reb</TableHeaderColumn>
 					<TableHeaderColumn dataField='ast' width='40' dataSort={ true }>Ast</TableHeaderColumn>
 					<TableHeaderColumn dataField='stl' width='40' dataSort={ true }>Stl</TableHeaderColumn>
@@ -222,8 +224,8 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='owner' width='90' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners, defaultValue: '--free agent--' } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
-				<button id="add-player-btn" type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
-				<button id="drop-player-btn" type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
+				<button id="add-player-btn" type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary' style='display:none;'>Add Player</button>
+				<button id="drop-player-btn" type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger' style='display:none;'>Drop Player</button>
 			</div>
 		);
 
