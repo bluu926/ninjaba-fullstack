@@ -169,10 +169,7 @@ class Dashboard extends Component {
 	toggleColumns = () => {
 		this.displayTableByTotal = !this.displayTableByTotal;
 
-		alert(this.displayTableByTotal);
-
-		return true;
-		//this.refs.table.reset();
+		setTimeout(() => this.props.loadPlayersFromServer(), 500);
 	}
 
 	renderContent() {
