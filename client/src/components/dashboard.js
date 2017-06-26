@@ -73,11 +73,14 @@ function onRowSelect(row, isSelected){
 
 
 	if(row['owner'] == '--free agent--') {
-		//alert('free agent');
+		$('#add-player-btn').show();
+		$('#drop-player-btn').hide();
 	} else if (row['owner'] == username) {
-		//alert('dropable');
+		$('#add-player-btn').hide();
+		$('#drop-player-btn').show();
 	} else {
-		//alert('not yours');
+		$('#add-player-btn').hide();
+		$('#drop-player-btn').hide();
 	}
 
 //	for(var prop in row){
@@ -133,7 +136,12 @@ class Dashboard extends Component {
 
 		this.props.addPlayer(playerId, username);
 
-		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+
+		setTimeout(() => this.props.loadPlayersFromServer(), 500);
+
+		$('#add-player-btn').hide();
+		$('#drop-player-btn').hide();
 	}
 
 	handleDropBtnClick = () => {
@@ -148,7 +156,12 @@ class Dashboard extends Component {
 
 		this.props.dropPlayer(playerId, username);
 
-		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+
+		setTimeout(() => this.props.loadPlayersFromServer(), 500);
+
+		$('#add-player-btn').hide();
+		$('#drop-player-btn').hide();
 	}
 
 	renderContent() {
@@ -209,8 +222,8 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='owner' width='90' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners, defaultValue: '--free agent--' } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
-				<button type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
-				<button type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
+				<button id="add-player-btn" type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
+				<button id="drop-player-btn" type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
 			</div>
 		);
 
