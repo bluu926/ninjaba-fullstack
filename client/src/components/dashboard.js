@@ -119,8 +119,6 @@ class Dashboard extends Component {
 			paginationPosition: 'bottom'  // default is bottom, top and both is all available
 		};
 
-alert(this.ref.table);
-
 //		setTimeout(() => this.refs.table.reset(), 1000);
 	}
 
@@ -216,6 +214,8 @@ alert(this.ref.table);
 				<button type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
 			</div>
 		);
+
+		setTimeout(() => this.refs.table.reset(), 1000);
 	}
 
 }
