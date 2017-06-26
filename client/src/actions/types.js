@@ -6,5 +6,5 @@ export const AUTH_USER = 'auth_user',
              PROTECTED_TEST = 'protected_test',
              ADD_PLAYER = 'add_player',
              DROP_PLAYER = 'drop_player',
-             HOME_PAGE = 'home_page',
+             TRANSACTION = 'transaction',
              ERROR = 'error';

@@ -8,8 +8,6 @@ class Transaction extends Component {
 		super(props);
 		this.props.loadTransactionsFromServer();
 
-		alert("transaction page: " + this.props.transaction);
-
 		this.options = {
 			defaultSortName: 'createdAt',  // default sort column name
 			defaultSortOrder: 'desc',  // default sort order
