@@ -213,8 +213,8 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='team' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
 					<TableHeaderColumn dataField='g' width='40' dataSort={ true }>Gm</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg' width='40' dataSort={ true } hidden={this.props.displayTableByTotal}>FG</TableHeaderColumn>
-					<TableHeaderColumn dataField='ft' width='40' dataSort={ true } hidden={this.props.displayTableByTotal}>FT</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg' width='40' dataSort={ true } hidden={ true }>FG</TableHeaderColumn>
+					<TableHeaderColumn dataField='ft' width='40' dataSort={ true } hidden={ true }>FT</TableHeaderColumn>
 					<TableHeaderColumn dataField='reb' width='40' dataSort={ true }>Reb</TableHeaderColumn>
 					<TableHeaderColumn dataField='ast' width='40' dataSort={ true }>Ast</TableHeaderColumn>
 					<TableHeaderColumn dataField='stl' width='40' dataSort={ true }>Stl</TableHeaderColumn>
