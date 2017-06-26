@@ -129,6 +129,8 @@ exports.addPlayer = function(req, res, next) {
 
 		const numOfPlayers = Player.find({ owner: username}).count();
 
+		console.log("********* NUMBER OF PLAYERS ********** " + numOfPlayers);
+
 		if(!numOfPlayers || numOfPlayers >= 5) {
 			return res.status(422).json({ error: 'Player limit reached.'});
 		}
