@@ -132,6 +132,7 @@ exports.addPlayer = function(req, res, next) {
 			console.log("********* NUMBER OF PLAYERS ********** " + numOfPlayers);
 
 			if(numOfPlayers >= 5) {
+				console.log("********* NUMBER OF PLAYERS INSIDE ********** " + numOfPlayers);
 				return res.status(422).json({ error: 'Player limit reached.'});
 			}
 		});
