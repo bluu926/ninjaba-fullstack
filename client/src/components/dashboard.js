@@ -171,7 +171,7 @@ class Dashboard extends Component {
 
 		alert(this.displayTableByTotal);
 
-		return;
+		return true;
 		//this.refs.table.reset();
 	}
 
