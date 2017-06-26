@@ -205,6 +205,7 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<div>
+				{this.props.displayTableByTotal}
 				{this.renderAlert()}
 				{this.renderMessage()}
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
