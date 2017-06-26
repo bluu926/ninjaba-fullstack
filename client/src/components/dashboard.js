@@ -169,7 +169,7 @@ class Dashboard extends Component {
 	toggleColumns = () => {
 		this.displayTableByTotal = !this.displayTableByTotal;
 
-		setTimeout(() => this.props.loadPlayersFromServer(), 500);
+		setTimeout(() => this.props.loadPlayersFromServer(), 250);
 	}
 
 	renderContent() {
@@ -231,8 +231,8 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='owner' width='90' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners, defaultValue: '--free agent--' } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
-				<button id="add-player-btn" type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary'>Add Player</button>
-				<button id="drop-player-btn" type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger'>Drop Player</button>
+				<button id="add-player-btn" type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary' style={ {display: 'none'} }>Add Player</button>
+				<button id="drop-player-btn" type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger' style={ {display: 'none'} }>Drop Player</button>
 			</div>
 		);
 	}
