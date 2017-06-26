@@ -9,6 +9,7 @@ import Register from './components/auth/register';
 import Login from './components/auth/login';
 import Logout from './components/auth/logout';
 import Dashboard from './components/dashboard';
+import Transaction from './components/auth/transaction';
 import RequireAuth from './components/auth/require-auth';
 
 export default (
@@ -18,6 +19,7 @@ export default (
 		<Route path="login" component={Login} />
 		<Route path="logout" component={Logout} />
 		<Route path="dashboard" component={RequireAuth(Dashboard)} />
+		<Route path="transaction" component={RequireAuth(Transaction)} />
 
 		<Route path="*" component={NotFoundPage} />
 	</Route>

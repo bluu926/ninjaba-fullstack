@@ -8,7 +8,7 @@ import { AUTH_USER,
          PROTECTED_TEST,
          ADD_PLAYER,
          DROP_PLAYER,
-         HOME_PAGE,
+         TRANSACTION,
          ERROR } from './types';
 
 const API_URL = 'https://ben-test-ninja.herokuapp.com/api';
@@ -176,11 +176,13 @@ export function dropPlayer(playerId, username) {
 
 export function loadTransactionsFromServer() {  
   return function(dispatch) {
-    axios.get(`${API_URL}/transactions`)
+    axios.get(`${API_URL}/auth/transactions`, {
+          headers: { 'Authorization': cookie.load('token') }
+    })
     .then(response => {
       dispatch({
-        type: HOME_PAGE,
-        payload: response.data.content
+        type: TRANSACTION,
+        payload: response.data.transaction
       });
     })
     .catch((error) => {

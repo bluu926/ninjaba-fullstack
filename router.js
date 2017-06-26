@@ -26,14 +26,6 @@ module.exports = function(app) {
 
     // Set auth routes as subgroup/middleware to apiRoutes
 	apiRoutes.use('/auth', authRoutes);
-
-	apiRoutes.get('/transactions', (req, res) => {
-		Transaction.find(function(err, transactions) {
-			if (err)
-				res.send(err);
-			res.send({ content: transactions });
-		});
-	});
 	
 	// Registration route
 	authRoutes.post('/register', AuthenticationController.register);
@@ -55,6 +47,14 @@ module.exports = function(app) {
 			if (err)
 				res.send(err);
 			res.send({ content: players });
+		});
+	});
+
+	authRoutes.get('/transactions', (req, res) => {
+		Transaction.find(function(err, transactions) {
+			if (err)
+				res.send(err);
+			res.send({ transaction: transactions });
 		});
 	});
 

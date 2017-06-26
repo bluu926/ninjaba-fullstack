@@ -5,10 +5,10 @@ import { AUTH_USER,
          PROTECTED_TEST,
          ADD_PLAYER,
          DROP_PLAYER,
-         HOME_PAGE,
+         TRANSACTION,
          ERROR } from '../actions/types';
 
-const INITIAL_STATE = { error: '', message: '', content: '', authenticated: false}
+const INITIAL_STATE = { error: '', message: '', content: '', transaction: '', authenticated: false}
 
 export default function (state = INITIAL_STATE, action) {  
   switch(action.type) {
@@ -26,8 +26,8 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, error: '', message: action.payload };
     case DROP_PLAYER:
       return { ...state, error: '', message: action.payload };
-    case HOME_PAGE:
-      return { ...state, content: action.payload };
+    case TRANSACTION:
+      return { ...state, transaction: action.payload };
     case ERROR:
       return { ...state, message: '', error: action.payload };    
   }

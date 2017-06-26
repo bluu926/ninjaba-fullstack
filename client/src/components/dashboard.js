@@ -91,7 +91,7 @@ class Dashboard extends Component {
 	constructor(props) {
 		super(props);
 		//this.props.protectedTest();
-		setTimeout(() => this.props.loadPlayersFromServer(), 1000);
+		this.props.loadPlayersFromServer();
 		//this.props.loadPlayersFromServer();
 		this.userInfo = JSON.parse(localStorage.getItem('user'));
 
@@ -119,7 +119,6 @@ class Dashboard extends Component {
 			paginationPosition: 'bottom'  // default is bottom, top and both is all available
 		};
 
-//		setTimeout(() => this.refs.table.reset(), 1000);
 	}
 
 	handleSaveBtnClick = () => {
