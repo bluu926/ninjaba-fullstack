@@ -37,7 +37,8 @@ class Transaction extends Component {
 	render() {
 		return (
 			<div>
-				<div>Transactions!</div>
+				<div><h3>Transactions</h3></div>
+				<br />
 				<BootstrapTable ref='table' data={ this.props.transaction } pagination={ true } options={ this.options } striped hover condensed>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
 					<TableHeaderColumn dataField='firstName' dataSort={ true }>Owner</TableHeaderColumn>
