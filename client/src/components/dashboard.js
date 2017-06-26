@@ -118,6 +118,8 @@ class Dashboard extends Component {
 			paginationShowsTotal: this.renderShowsTotal,  // Accept bool or function
 			paginationPosition: 'bottom'  // default is bottom, top and both is all available
 		};
+
+		setTimeout(() => this.refs.table.reset(), 1000);
 	}
 
 	handleSaveBtnClick = () => {

@@ -37,7 +37,7 @@ class HomePage extends Component {
 	render() {
 		return (
 			<div>
-				<div>PLACEHOLDER TEXT!</div>
+				<div>Welcome to the Ninja Basketball Association</div>
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } striped hover condensed>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
 					<TableHeaderColumn dataField='firstName' dataSort={ true }>Owner</TableHeaderColumn>
