@@ -128,6 +128,7 @@ class Dashboard extends Component {
 
 	handleSaveBtnClick = () => {
 		this.props.message = '';
+		alert(this.props.displayTableByTotal);
 
 		const playerId = this.refs.table.state.selectedRowKeys;
 		const username = this.userInfo['username'];
@@ -205,7 +206,6 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<div>
-				{this.props.displayTableByTotal}
 				{this.renderAlert()}
 				{this.renderMessage()}
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
