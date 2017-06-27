@@ -11,8 +11,8 @@ import { AUTH_USER,
          TRANSACTION,
          ERROR } from './types';
 
-const API_URL = 'https://ben-test-ninja.herokuapp.com/api';
-const CLIENT_ROOT_URL = 'https://ben-test-ninja.herokuapp.com';
+const API_URL = 'https://ninja-ba.herokuapp.com/api';
+const CLIENT_ROOT_URL = 'https://ninja-ba.herokuapp.com';
 
 export function errorHandler(dispatch, error, type) {  
   let errorMessage = '';
