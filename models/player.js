@@ -33,7 +33,7 @@ const PlayerSchema = new Schema({
 	  	type: Number,
 		required: true
 	},	
-	fg%: {
+	'fg%': {
 	  	type: Number,
 		required: true
 	},	
@@ -45,7 +45,7 @@ const PlayerSchema = new Schema({
 	  	type: Number,
 		required: true
 	},	
-	fg%-total: {
+	'fg%-total': {
 	  	type: Number,
 		required: true
 	},	
@@ -65,7 +65,7 @@ const PlayerSchema = new Schema({
 	  	type: Number,
 		required: true
 	},	
-	ft%: {
+	'ft%': {
 	  	type: Number,
 		required: true
 	},	
@@ -77,7 +77,7 @@ const PlayerSchema = new Schema({
 	  	type: Number,
 		required: true
 	},	
-	f5%-total: {
+	'ft%-total': {
 	  	type: Number,
 		required: true
 	},	
