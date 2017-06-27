@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // Player Scehma
 //==============================
 const PlayerSchema = new Schema({
-  	name: {
+  	player: {
 	    type: String,
 		required: true
 	},
