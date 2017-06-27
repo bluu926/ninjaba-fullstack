@@ -37,11 +37,11 @@ const PlayerSchema = new Schema({
 	  	type: Number,
 		required: true
 	},	
-	fg-total: {
+	'fg-total': {
 	  	type: Number,
 		required: true
 	},
-	fga-total: {
+	'fga-total': {
 	  	type: Number,
 		required: true
 	},	
@@ -53,7 +53,7 @@ const PlayerSchema = new Schema({
 	  	type: Number,
 		required: true
 	},	
-	three-total: {
+	'three-total': {
 	  	type: Number,
 		required: true
 	},		
@@ -69,11 +69,11 @@ const PlayerSchema = new Schema({
 	  	type: Number,
 		required: true
 	},	
-	ft-total: {
+	'ft-total': {
 	  	type: Number,
 		required: true
 	},	
-	fta-total: {
+	'fta-total': {
 	  	type: Number,
 		required: true
 	},	
@@ -101,23 +101,23 @@ const PlayerSchema = new Schema({
 	  	type: Number,
 		required: true
 	},
-	reb-total: {
+	'reb-total': {
 	  	type: Number,
 		required: true
 	},
-	ast-total: {
+	'ast-total': {
 	  	type: Number,
 		required: true
 	},
-	stl-total: {
+	'stl-total': {
 	  	type: Number,
 		required: true
 	},
-	blk-total: {
+	'blk-total': {
 	  	type: Number,
 		required: true
 	},
-	to-total: {
+	'to-total': {
 	  	type: Number,
 		required: true
 	},	
@@ -125,7 +125,7 @@ const PlayerSchema = new Schema({
 	  	type: Number,
 		required: true
 	},
-	pts-total: {
+	'pts-total': {
 	  	type: Number,
 		required: true
 	},	
