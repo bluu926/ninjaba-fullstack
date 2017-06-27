@@ -102,7 +102,7 @@ class Dashboard extends Component {
 		this.displayTableByTotal = true;
 
 		this.options = {
-			defaultSortName: 'name',  // default sort column name
+			defaultSortName: 'player',  // default sort column name
 			defaultSortOrder: 'asc',  // default sort order
 
 			sizePerPageList: [ {
