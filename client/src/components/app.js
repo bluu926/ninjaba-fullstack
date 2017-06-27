@@ -5,14 +5,14 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<HeaderNav/>
-
+				
 				<div id="wrap">
+					<HeaderNav/>
+
 					<div className="container">
 						{this.props.children}
 					</div>
-				
-					<div id="push"></div>
+
 				</div>
 
 				<div id="footer">
