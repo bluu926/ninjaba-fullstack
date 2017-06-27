@@ -12,8 +12,8 @@ class App extends Component {
 				</div>
 
 				<div id="footer">
-			      <div class="container">
-			        <p class="text-muted credit">Footer.</p>
+			      <div className="container">
+			        <p className="text-muted credit">Footer.</p>
 			      </div>
 			    </div>
 
