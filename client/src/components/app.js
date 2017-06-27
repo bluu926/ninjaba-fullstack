@@ -13,12 +13,12 @@ class App extends Component {
 						{this.props.children}
 					</div>
 
-				</div>
+					<div id="footer">
+				      <div className="container">
+				        <p className="text-muted credit">Footer.</p>
+				      </div>
+				    </div>
 
-				<div id="footer">
-			      <div className="container">
-			        <p className="text-muted credit">Footer.</p>
-			      </div>
 			    </div>
 
 			</div>
