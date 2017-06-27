@@ -47,3 +47,7 @@ body {
   height: 60px;
   background-color: #f5f5f5;
 }
+
+.center-footer {
+  margin: 20px 0 10px;
+}
