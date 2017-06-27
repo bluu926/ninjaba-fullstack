@@ -5,18 +5,15 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				
-				<div className="container">
-					<HeaderNav/>
+				<HeaderNav/>
 
-					<div className="container">
-						{this.props.children}
-					</div>
+				<div className="container">
+					{this.props.children}
 				</div>
 
 				<footer className="footer">
 				    <div className="container">
-				    	<p className="text-muted">Footer</p>
+				    	<p className="text-muted"></p>
 				 	</div>
 				</footer>
 
