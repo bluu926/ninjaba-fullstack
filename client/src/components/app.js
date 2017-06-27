@@ -6,20 +6,19 @@ class App extends Component {
 		return (
 			<div>
 				
-				<div id="wrap">
+				<div className="container">
 					<HeaderNav/>
 
 					<div className="container">
 						{this.props.children}
 					</div>
+				</div>
 
-					<div id="footer">
-				      <div className="container">
-				        <p className="text-muted credit">Footer.</p>
-				      </div>
-				    </div>
-
-			    </div>
+				<footer className="footer">
+				    <div className="container">
+				    	<p className="text-muted">Footer</p>
+				 	</div>
+				</footer>
 
 			</div>
 		);
