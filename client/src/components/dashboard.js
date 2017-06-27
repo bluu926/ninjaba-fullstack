@@ -220,31 +220,30 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='player' width='160' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
 					<TableHeaderColumn dataField='team' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
-					<TableHeaderColumn dataField='g' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>Gm</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FG</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg%' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FG%</TableHeaderColumn>
-					<TableHeaderColumn dataField='three' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>3pt</TableHeaderColumn>
-					<TableHeaderColumn dataField='ft' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FT</TableHeaderColumn>
-					<TableHeaderColumn dataField='ft%' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FT%</TableHeaderColumn>
-					<TableHeaderColumn dataField='reb' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>Reb</TableHeaderColumn>
-					<TableHeaderColumn dataField='ast' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>Ast</TableHeaderColumn>
-					<TableHeaderColumn dataField='stl' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>Stl</TableHeaderColumn>
-					<TableHeaderColumn dataField='blk' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>Blk</TableHeaderColumn>
-					<TableHeaderColumn dataField='to' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>TO</TableHeaderColumn>
-					<TableHeaderColumn dataField='pts-total' width='50' dataSort={ true } hidden={ this.displayTableByTotal }>Pts</TableHeaderColumn>
-					<TableHeaderColumn dataField='g-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>Gm</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FG</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg%-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FG%</TableHeaderColumn>
-					<TableHeaderColumn dataField='three-total' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>3pt</TableHeaderColumn>
-					<TableHeaderColumn dataField='ft-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FT</TableHeaderColumn>					
-					<TableHeaderColumn dataField='ft%-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FT%</TableHeaderColumn>	
-					<TableHeaderColumn dataField='reb-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>Reb</TableHeaderColumn>
-					<TableHeaderColumn dataField='ast-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>Ast</TableHeaderColumn>
-					<TableHeaderColumn dataField='stl-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>Stl</TableHeaderColumn>
-					<TableHeaderColumn dataField='blk-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>Blk</TableHeaderColumn>
-					<TableHeaderColumn dataField='to-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>TO</TableHeaderColumn>					
-					<TableHeaderColumn dataField='pts-total' width='50' dataSort={ true } hidden={ !this.displayTableByTotal }>Pts</TableHeaderColumn>
-					<TableHeaderColumn dataField='owner' width='90' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
+					<TableHeaderColumn dataField='g' width='40' dataSort={ true }>Gm</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>FG</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg%' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>FG%</TableHeaderColumn>
+					<TableHeaderColumn dataField='three' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>3pt</TableHeaderColumn>
+					<TableHeaderColumn dataField='ft' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>FT</TableHeaderColumn>
+					<TableHeaderColumn dataField='ft%' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>FT%</TableHeaderColumn>
+					<TableHeaderColumn dataField='reb' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>Reb</TableHeaderColumn>
+					<TableHeaderColumn dataField='ast' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>Ast</TableHeaderColumn>
+					<TableHeaderColumn dataField='stl' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>Stl</TableHeaderColumn>
+					<TableHeaderColumn dataField='blk' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>Blk</TableHeaderColumn>
+					<TableHeaderColumn dataField='to' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>TO</TableHeaderColumn>
+					<TableHeaderColumn dataField='pts-total' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>Pts</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>FG</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg%-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>FG%</TableHeaderColumn>
+					<TableHeaderColumn dataField='three-total' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>3pt</TableHeaderColumn>
+					<TableHeaderColumn dataField='ft-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>FT</TableHeaderColumn>					
+					<TableHeaderColumn dataField='ft%-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>FT%</TableHeaderColumn>	
+					<TableHeaderColumn dataField='reb-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>Reb</TableHeaderColumn>
+					<TableHeaderColumn dataField='ast-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>Ast</TableHeaderColumn>
+					<TableHeaderColumn dataField='stl-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>Stl</TableHeaderColumn>
+					<TableHeaderColumn dataField='blk-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>Blk</TableHeaderColumn>
+					<TableHeaderColumn dataField='to-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>TO</TableHeaderColumn>					
+					<TableHeaderColumn dataField='pts-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>Pts</TableHeaderColumn>
+					<TableHeaderColumn dataField='owner' width='85' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners, defaultValue: '--free agent--' } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
 				<button id="add-player-btn" type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary' style={ {display: 'none'} }>Add Player</button>
