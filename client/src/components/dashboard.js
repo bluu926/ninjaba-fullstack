@@ -222,10 +222,10 @@ class Dashboard extends Component {
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
 					<TableHeaderColumn dataField='g' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>Gm</TableHeaderColumn>
 					<TableHeaderColumn dataField='fg' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FG</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg%' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FG%</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg\%' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FG%</TableHeaderColumn>
 					<TableHeaderColumn dataField='three' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>3pt</TableHeaderColumn>
 					<TableHeaderColumn dataField='ft' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FT</TableHeaderColumn>
-					<TableHeaderColumn dataField='ft%' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FT%</TableHeaderColumn>
+					<TableHeaderColumn dataField='ft\%' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>FT%</TableHeaderColumn>
 					<TableHeaderColumn dataField='reb' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>Reb</TableHeaderColumn>
 					<TableHeaderColumn dataField='ast' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>Ast</TableHeaderColumn>
 					<TableHeaderColumn dataField='stl' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>Stl</TableHeaderColumn>
@@ -234,10 +234,10 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='pts-total' width='50' dataSort={ true } hidden={ this.displayTableByTotal }>Pts</TableHeaderColumn>
 					<TableHeaderColumn dataField='g-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>Gm</TableHeaderColumn>
 					<TableHeaderColumn dataField='fg-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FG</TableHeaderColumn>
-					<TableHeaderColumn dataField='fg%-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FG%</TableHeaderColumn>
+					<TableHeaderColumn dataField='fg\%-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FG%</TableHeaderColumn>
 					<TableHeaderColumn dataField='three-total' width='40' dataSort={ true } hidden={ this.displayTableByTotal }>3pt</TableHeaderColumn>
 					<TableHeaderColumn dataField='ft-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FT</TableHeaderColumn>					
-					<TableHeaderColumn dataField='ft%-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FT%</TableHeaderColumn>	
+					<TableHeaderColumn dataField='ft\%-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>FT%</TableHeaderColumn>	
 					<TableHeaderColumn dataField='reb-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>Reb</TableHeaderColumn>
 					<TableHeaderColumn dataField='ast-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>Ast</TableHeaderColumn>
 					<TableHeaderColumn dataField='stl-total' width='40' dataSort={ true } hidden={ !this.displayTableByTotal }>Stl</TableHeaderColumn>
