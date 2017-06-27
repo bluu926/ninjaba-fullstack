@@ -7,8 +7,12 @@ class App extends Component {
 			<div>
 				<HeaderNav/>
 
-				<div className="container">
-					{this.props.children}
+				<div id="wrap">
+					<div className="container">
+						{this.props.children}
+					</div>
+				
+					<div id="push"></div>
 				</div>
 
 				<div id="footer">
