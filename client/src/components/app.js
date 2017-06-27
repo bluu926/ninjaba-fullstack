@@ -13,7 +13,7 @@ class App extends Component {
 
 				<footer className="footer">
 				    <div className="container">
-				    	<p className="text-muted"></p>
+				    	<p className="text-muted">Blah</p>
 				 	</div>
 				</footer>
 

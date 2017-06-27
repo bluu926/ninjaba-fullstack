@@ -231,10 +231,10 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='stl' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>Stl</TableHeaderColumn>
 					<TableHeaderColumn dataField='blk' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>Blk</TableHeaderColumn>
 					<TableHeaderColumn dataField='to' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>TO</TableHeaderColumn>
-					<TableHeaderColumn dataField='pts-total' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>Pts</TableHeaderColumn>
+					<TableHeaderColumn dataField='pts' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>Pts</TableHeaderColumn>
 					<TableHeaderColumn dataField='fg-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>FG</TableHeaderColumn>
 					<TableHeaderColumn dataField='fg%-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>FG%</TableHeaderColumn>
-					<TableHeaderColumn dataField='three-total' width='45' dataSort={ true } hidden={ this.displayTableByTotal }>3pt</TableHeaderColumn>
+					<TableHeaderColumn dataField='three-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>3pt</TableHeaderColumn>
 					<TableHeaderColumn dataField='ft-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>FT</TableHeaderColumn>					
 					<TableHeaderColumn dataField='ft%-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>FT%</TableHeaderColumn>	
 					<TableHeaderColumn dataField='reb-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>Reb</TableHeaderColumn>
