@@ -217,7 +217,7 @@ class Dashboard extends Component {
 				<button onClick={ this.toggleColumns } className='btn btn-default'>Toggle Total vs Per Game</button>
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
-					<TableHeaderColumn dataField='name' width='160' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
+					<TableHeaderColumn dataField='player' width='160' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
 					<TableHeaderColumn dataField='team' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
 					<TableHeaderColumn dataField='g' width='40' dataSort={ true }>Gm</TableHeaderColumn>
