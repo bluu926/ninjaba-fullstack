@@ -1,6 +1,5 @@
 const AuthenticationController = require('./controllers/authentication'),
       express = require('express'),
-      bodyParser = require('body-parser'),
       Player = require('./models/player'),
       Transaction = require('./models/transaction'),
       Comment = require('./models/comments'),
@@ -20,10 +19,7 @@ const REQUIRE_ADMIN = "Admin",
 module.exports = function(app) {
     // initializing route groups
 	const apiRoutes = express.Router(),
-	      authRoutes = express.Router();
-
-	authRoutes.use(bodyParser.urlencoded({ extended: false }));
-	authRoutes.use(bodyParser.json());	      
+	      authRoutes = express.Router();  
 				
 	//=========================
     // Auth Routes
