@@ -28,6 +28,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "jquery": "2.2.1",
     "lodash": "^4.6.1",
+    "marked": "^0.3.6",
     "moment": "^2.13.0",
     "node-sass": "^3.4.2",
     "react": "~15.2.1",
