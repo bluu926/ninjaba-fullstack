@@ -22,8 +22,8 @@ module.exports = function(app) {
 	const apiRoutes = express.Router(),
 	      authRoutes = express.Router();
 
-	app.use(bodyParser.urlencoded({ extended: false }));
-	app.use(bodyParser.json());	      
+	authRoutes.use(bodyParser.urlencoded({ extended: false }));
+	authRoutes.use(bodyParser.json());	      
 				
 	//=========================
     // Auth Routes
