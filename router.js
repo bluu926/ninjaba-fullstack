@@ -1,5 +1,6 @@
 const AuthenticationController = require('./controllers/authentication'),
       express = require('express'),
+      bodyParser = require('body-parser'),
       Player = require('./models/player'),
       Transaction = require('./models/transaction'),
       Comment = require('./models/comments'),
@@ -20,6 +21,9 @@ module.exports = function(app) {
     // initializing route groups
 	const apiRoutes = express.Router(),
 	      authRoutes = express.Router();
+
+	app.use(bodyParser.urlencoded({ extended: false }));
+	app.use(bodyParser.json());	      
 				
 	//=========================
     // Auth Routes
@@ -82,7 +86,7 @@ module.exports = function(app) {
 			res.json({ message: 'Comment successfully added!' });
 		});
 	});
-	
+
 	// Test protected route
 	apiRoutes.get('/protected', requireAuth, (req, res) => {
 	    res.send({ content: 'The protected test route is functional!' });
