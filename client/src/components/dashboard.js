@@ -73,16 +73,16 @@ function onRowSelect(row, isSelected){
 	var username = userInfo['username'];
 
 
-	if(row['owner'] == '--free agent--') {
-		$('#add-player-btn').show();
-		$('#drop-player-btn').hide();
-	} else if (row['owner'] == username) {
-		$('#add-player-btn').hide();
-		$('#drop-player-btn').show();
-	} else {
-		$('#add-player-btn').hide();
-		$('#drop-player-btn').hide();
-	}
+//	if(row['owner'] == '--free agent--') {
+//		$('#add-player-btn').show();
+//		$('#drop-player-btn').hide();
+//	} else if (row['owner'] == username) {
+//		$('#add-player-btn').hide();
+//		$('#drop-player-btn').show();
+//	} else {
+//		$('#add-player-btn').hide();
+//		$('#drop-player-btn').hide();
+//	}
 
 //	for(var prop in row){
 //		rowStr+=prop+": '"+row[prop]+"' ";
@@ -143,8 +143,8 @@ class Dashboard extends Component {
 
 		setTimeout(() => this.props.loadPlayersFromServer(), 500);
 
-		$('#add-player-btn').hide();
-		$('#drop-player-btn').hide();
+//		$('#add-player-btn').hide();
+//		$('#drop-player-btn').hide();
 	}
 
 	handleDropBtnClick = () => {
@@ -163,8 +163,8 @@ class Dashboard extends Component {
 
 		setTimeout(() => this.props.loadPlayersFromServer(), 500);
 
-		$('#add-player-btn').hide();
-		$('#drop-player-btn').hide();
+//		$('#add-player-btn').hide();
+//		$('#drop-player-btn').hide();
 	}
 
 	toggleColumns = () => {
@@ -246,8 +246,8 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='owner' width='85' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
 						filter={ { type: 'SelectFilter', options: allOwners, defaultValue: '--free agent--' } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
-				<button id="add-player-btn" type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary' style={ {display: 'none'} }>Add Player</button>
-				<button id="drop-player-btn" type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger' style={ {display: 'none'} }>Drop Player</button>
+				<button id="add-player-btn" type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary' >Add Player</button>
+				<button id="drop-player-btn" type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger' >Drop Player</button>
 			</div>
 		);
 	}
