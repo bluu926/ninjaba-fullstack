@@ -218,6 +218,8 @@ class Dashboard extends Component {
 				<BootstrapTable ref='table' data={ this.props.content } pagination={ true } options={ this.options } selectRow={ selectRowProp } striped hover condensed exportCSV>
 					<TableHeaderColumn dataField="_id" isKey hidden>Id</TableHeaderColumn>
 					<TableHeaderColumn dataField='player' width='160' dataSort={ true } filter={ { type: 'TextFilter', delay: 500 } }>Player</TableHeaderColumn>
+					<TableHeaderColumn dataField='owner' width='85' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
+						filter={ { type: 'SelectFilter', options: allOwners, defaultValue: '--free agent--' } }>Owner</TableHeaderColumn>
 					<TableHeaderColumn dataField='team' width='60' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allTeams }
 						filter={ { type: 'SelectFilter', options: allTeams } }>Team</TableHeaderColumn>
 					<TableHeaderColumn dataField='g' width='40' dataSort={ true }>Gm</TableHeaderColumn>
@@ -243,8 +245,6 @@ class Dashboard extends Component {
 					<TableHeaderColumn dataField='blk-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>Blk</TableHeaderColumn>
 					<TableHeaderColumn dataField='to-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>TO</TableHeaderColumn>					
 					<TableHeaderColumn dataField='pts-total' width='45' dataSort={ true } hidden={ !this.displayTableByTotal }>Pts</TableHeaderColumn>
-					<TableHeaderColumn dataField='owner' width='85' dataSort={ true } filterFormatted dataFormat={ enumFormatter } formatExtraData={ allOwners }
-						filter={ { type: 'SelectFilter', options: allOwners, defaultValue: '--free agent--' } }>Owner</TableHeaderColumn>
 				</BootstrapTable>
 				<button id="add-player-btn" type="submit" onClick={ this.handleSaveBtnClick } className='btn btn-primary' >Add Player</button>
 				<button id="drop-player-btn" type="submit" onClick={ this.handleDropBtnClick } className='btn btn-danger' >Drop Player</button>
