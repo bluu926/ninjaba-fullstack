@@ -96,7 +96,7 @@ class Dashboard extends Component {
 		super(props);
 		//this.props.protectedTest();
 		this.props.loadPlayersFromServer();
-		//this.props.loadPlayersFromServer();
+		
 		this.userInfo = JSON.parse(localStorage.getItem('user'));
 
 		this.displayTableByTotal = true;
