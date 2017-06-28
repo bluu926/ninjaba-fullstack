@@ -76,12 +76,13 @@ module.exports = function(app) {
 		comment.text = req.body.text;
 		comment.save(function(err) {
 
-		if (err)
-			res.send(err);
+			if (err)
+				res.send(err);
 
-		res.json({ message: 'Comment successfully added!' });
+			res.json({ message: 'Comment successfully added!' });
+		});
 	});
-
+	
 	// Test protected route
 	apiRoutes.get('/protected', requireAuth, (req, res) => {
 	    res.send({ content: 'The protected test route is functional!' });
