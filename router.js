@@ -83,7 +83,7 @@ module.exports = function(app) {
 			if (err)
 				res.send(err);
 
-			res.json({ message: 'Comment successfully added!'' });
+			res.json({ message: 'Comment successfully added!' });
 		});
 	});
 
