@@ -207,7 +207,7 @@ exports.recordTransaction = function(req, res, next) {
 				firstName: foundUser.profile.firstName,
 				lastName: foundUser.profile.lastName,
 				transactionType: transactionType,
-				playerName: foundPlayer.name
+				playerName: foundPlayer.player
 			});
 
 			transaction.save(function(err, transaction) {
