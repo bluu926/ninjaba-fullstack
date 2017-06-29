@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
+function dateFormatter(cell, row) {
+	var date = new Date(cell);
+
+	return date.toTimeString();
+}
+
 class Transaction extends Component {
 	constructor(props) {
 		super(props);
@@ -44,7 +50,7 @@ class Transaction extends Component {
 					<TableHeaderColumn dataField='firstName' dataSort={ true }>Owner</TableHeaderColumn>
 					<TableHeaderColumn dataField='transactionType' dataSort={ true }>Action</TableHeaderColumn>
 					<TableHeaderColumn dataField='playerName' dataSort={ true }>Player</TableHeaderColumn>
-					<TableHeaderColumn dataField='createdAt' dataSort={ true }>Time</TableHeaderColumn>
+					<TableHeaderColumn dataField='createdAt' dataSort={ true } dataFormat={ dateFormatter }>Time</TableHeaderColumn>
 				</BootstrapTable>
 			</div>
 		)
