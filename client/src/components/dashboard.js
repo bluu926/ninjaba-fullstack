@@ -6,6 +6,7 @@ import cookie from 'react-cookie';
 import $ from 'jquery';
 
 const token = cookie.load('token');
+const usrname = cookie.load('username');
 
 const allOwners = {
   '--free agent--': '--FA--',
@@ -69,8 +70,10 @@ function enumFormatter(cell, row, enumObject) {
 
 function onRowSelect(row, isSelected){
 	var rowStr = "";
-	var userInfo = JSON.parse(localStorage.getItem('user'));
-	var username = userInfo['username'];
+	//var userInfo = JSON.parse(localStorage.getItem('user'));
+	//var username = userInfo['username'];
+
+	var username = usrname;
 
 
 //	if(row['owner'] == '--free agent--') {
@@ -97,7 +100,8 @@ class Dashboard extends Component {
 		//this.props.protectedTest();
 		this.props.loadPlayersFromServer();
 		
-		this.userInfo = JSON.parse(localStorage.getItem('user'));
+		//this.userInfo = JSON.parse(localStorage.getItem('user'));
+		this.userInfo = usrname;
 
 		this.displayTableByTotal = true;
 
@@ -131,7 +135,9 @@ class Dashboard extends Component {
 		this.props.message = '';
 
 		const playerId = this.refs.table.state.selectedRowKeys;
-		const username = this.userInfo['username'];
+		//const username = this.userInfo['username'];
+
+		const username = this.userInfo;
 
 		if (!playerId || !username) {
 			return;
@@ -151,7 +157,9 @@ class Dashboard extends Component {
 		this.props.message = '';
 
 		const playerId = this.refs.table.state.selectedRowKeys;
-		const username = this.userInfo['username'];
+		//const username = this.userInfo['username'];
+
+		const username = this.userInfo;
 
 		if (!playerId || !username) {
 			return;
