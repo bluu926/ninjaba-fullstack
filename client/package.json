@@ -1,6 +1,9 @@
 {
   "name": "client",
   "version": "1.0.0",
+  "engines": {
+    "node": "6.11.1"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -30,11 +33,11 @@
     "lodash": "^4.6.1",
     "moment": "^2.13.0",
     "node-sass": "^3.4.2",
-    "react": "~15.2.1",
+    "react": "~15.5.4",
     "react-bootstrap-navbar": "^1.1.0",
     "react-bootstrap-table": "^3.4.0",
     "react-cookie": "^0.4.7",
-    "react-dom": "~15.2.1",
+    "react-dom": "~15.3.0",
     "react-ga": "^1.4.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.0",
