@@ -3,6 +3,24 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
+function dateFormatter(cell, row) {
+	var date = new Date(cell);
+
+//	return date.toTimeString();
+
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
+	var year = date.getFullYear();
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var ampm = hours >= 12 ? 'pm' : 'am';
+	hours = hours % 12;
+	hours = hours ? hours : 12; // the hour '0' should be '12'
+	minutes = minutes < 10 ? '0'+minutes : minutes;
+	var strTime = month + '/' + day + '/' + year + ' ' + hours + ':' + minutes + ' ' + ampm;
+	return strTime;
+}
+
 class Transaction extends Component {
 	constructor(props) {
 		super(props);
@@ -44,7 +62,7 @@ class Transaction extends Component {
 					<TableHeaderColumn dataField='firstName' dataSort={ true }>Owner</TableHeaderColumn>
 					<TableHeaderColumn dataField='transactionType' dataSort={ true }>Action</TableHeaderColumn>
 					<TableHeaderColumn dataField='playerName' dataSort={ true }>Player</TableHeaderColumn>
-					<TableHeaderColumn dataField='createdAt' dataSort={ true }>Time</TableHeaderColumn>
+					<TableHeaderColumn dataField='createdAt' dataSort={ true } dataFormat={ dateFormatter }>Time</TableHeaderColumn>
 				</BootstrapTable>
 			</div>
 		)

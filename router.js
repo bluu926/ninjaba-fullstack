@@ -2,6 +2,7 @@ const AuthenticationController = require('./controllers/authentication'),
       express = require('express'),
       Player = require('./models/player'),
       Transaction = require('./models/transaction'),
+      Comment = require('./models/comments'),
 	  passportService = require('./config/passport'),
 	  passport = require('passport');
 			
@@ -18,7 +19,7 @@ const REQUIRE_ADMIN = "Admin",
 module.exports = function(app) {
     // initializing route groups
 	const apiRoutes = express.Router(),
-	      authRoutes = express.Router();
+	      authRoutes = express.Router();  
 				
 	//=========================
     // Auth Routes
@@ -55,6 +56,30 @@ module.exports = function(app) {
 			if (err)
 				res.send(err);
 			res.send({ transaction: transactions });
+		});
+	});
+
+	authRoutes.get('/comments', (req, res) => {
+	    Comment.find(function(err, comments) {
+			if (err)
+				res.send(err);
+
+			//responds with a json object of our database comments.
+			res.json(comments)
+		});
+	});
+
+	authRoutes.post('/comments', (req, res) => {
+	    var comment = new Comment();
+		//body parser lets us use the req.body
+		comment.author = req.body.author;
+		comment.text = req.body.text;
+		comment.save(function(err) {
+
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Comment successfully added!' });
 		});
 	});
 
